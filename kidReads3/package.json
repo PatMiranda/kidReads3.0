@@ -32,11 +32,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/PatMiranda/kidReads2.0.git"
+    "url": "git+https://github.com/PatMiranda/kidReads3.0.git"
   },
   "author": "",
   "bugs": {
-    "url": "https://github.com/PatMiranda/kidReads2.0/issues"
+    "url": "https://github.com/PatMiranda/kidReads3.0/issues"
   },
-  "homepage": "https://github.com/PatMiranda/kidReads2.0#readme"
+  "homepage": "https://github.com/PatMiranda/kidReads3.0#readme"
 }
