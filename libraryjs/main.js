@@ -45,7 +45,7 @@ $(document).ready(function () {
                 if (id > 0) {
                     tagStyle = '<div style="background-image: url(' + "'images/pg" + pgCounter.toString() + ".JPG')" + '" />';
                     element = $(tagStyle);
-                    $("#Caterpillar").turn("addPage", element, pgCounter + 3)
+                    $("#readBook").turn("addPage", element, pgCounter + 3)
 
                     tagText = '';
                     page = (id * 2)
@@ -65,7 +65,7 @@ $(document).ready(function () {
                     pgCounter += 2;
                 }
                 element = $('<div class="text-center"/>').html(tagText);
-                $("#Caterpillar").turn("addPage", element, page + 3)
+                $("#readBook").turn("addPage", element, page + 3)
             })
         } else {
             // doc.data() will be undefined in this case
@@ -116,7 +116,7 @@ $(document).on('click', 'a', function (e) {
 $(window).ready(function () {
     //***************************************************************/
 
-    $('#Caterpillar').turn({
+    $('#readBook').turn({
         display: 'double',
         acceleration: true,
         gradients: !$.isTouch,
@@ -134,28 +134,28 @@ $(window).bind('keydown', function (e) {
     //***************************************************************/
 
     if (e.keyCode == 37)
-        $('#Caterpillar').turn('previous');
+        $('#readBook').turn('previous');
     else if (e.keyCode == 39)
-        $('#Caterpillar').turn('next');
+        $('#readBook').turn('next');
 });
 
 //***************************************************************/
 $('#prev').click(function () {
     //***************************************************************/
 
-    $('#Caterpillar').turn('previous');
+    $('#readBook').turn('previous');
 });
 
 //***************************************************************/
 $('#nex').click(function () {
     //***************************************************************/
-    $('#Caterpillar').turn('next');
+    $('#readBook').turn('next');
 
 })
 $('#restart').click(function () {
     //***************************************************************/
 
-    $('#Caterpillar').turn('page', 1);
+    $('#readBook').turn('page', 1);
 })
 //***************************************************************/
 $("#read-button").on("click", function () {
@@ -207,7 +207,7 @@ var pg44 = document.getElementById("pga44");
 var pg46 = document.getElementById("pga46");
 
 //***************************************************************/
-$("#Caterpillar").bind("turning", function (event, page) {
+$("#readBook").bind("turning", function (event, page) {
     //***************************************************************/
 
     if (page == 2) {

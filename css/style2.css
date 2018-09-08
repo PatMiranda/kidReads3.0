@@ -1,9 +1,9 @@
 
-#Caterpillar {
+#firstBook {
     font-family: 'Gaegu';
 }
 
-#Caterpillar .turn-page {
+#firstBook .turn-page {
 	background-color: whitesmoke;
 	background-size: 100% 100%;
 }
