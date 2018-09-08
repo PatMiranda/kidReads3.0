@@ -1,0 +1,40 @@
+
+#Caterpillar {
+    font-family: 'Gaegu';
+}
+
+#Caterpillar .turn-page {
+	background-color: whitesmoke;
+	background-size: 100% 100%;
+}
+
+#cover {
+	background-color: tan;
+}
+
+.flipbook {
+	width: 1100px;
+	height: 500px;
+}
+
+.flipbook .page {
+	width: 1000px;
+	height: 450px;
+}
+
+#firstBook{
+	border-style: solid;
+	border-width: 5px;
+	border-color: brown;
+	display: none;
+}
+
+@media only screen and (max-width: 1200px){
+
+
+
+.flipbook .page  img .hard{
+	width: 300px;
+	height: 136px;
+}
+}
