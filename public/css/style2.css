@@ -1,6 +1,7 @@
 
 #firstBook {
-    font-family: 'Gaegu';
+	font-family: 'Gaegu';
+	background-image:url('/images/bg.jpg');
 }
 
 #firstBook .turn-page {
@@ -10,6 +11,7 @@
 
 #cover {
 	background-color: tan;
+	background-image: url('/images/TitlePage.JPG');
 }
 
 .flipbook {
