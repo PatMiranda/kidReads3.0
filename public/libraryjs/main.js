@@ -1,116 +1,116 @@
-var TheLibrary = {
-    database: {},
+// var TheLibrary = {
+//     database: {},
 
-    InitializeFirestore: function () {
+//     InitializeFirestore: function () {
 
-        var config = {
-            apiKey: "AIzaSyAQVjicHyIwQPcNATlFN5GAbvP66T1-8Q0",
-            authDomain: "kidreadsproject.firebaseapp.com",
-            databaseURL: "https://kidreadsproject.firebaseio.com",
-            projectId: "kidreadsproject",
-            storageBucket: "kidreadsproject.appspot.com",
-            messagingSenderId: "735646109840"
-        };
+//         var config = {
+//             apiKey: "AIzaSyAQVjicHyIwQPcNATlFN5GAbvP66T1-8Q0",
+//             authDomain: "kidreadsproject.firebaseapp.com",
+//             databaseURL: "https://kidreadsproject.firebaseio.com",
+//             projectId: "kidreadsproject",
+//             storageBucket: "kidreadsproject.appspot.com",
+//             messagingSenderId: "735646109840"
+//         };
 
-        firebase.initializeApp(config);
+//         firebase.initializeApp(config);
 
-        // Initialize Cloud Firestore through Firebase
-        this.database = firebase.firestore();
-    }
-};
+//         // Initialize Cloud Firestore through Firebase
+//         this.database = firebase.firestore();
+//     }
+// };
 
-//***************************************************************/
-$(document).ready(function () {
-    //***************************************************************/
+// //***************************************************************/
+// $(document).ready(function () {
+//     //***************************************************************/
 
-    var arrWords = [];
+//     var arrWords = [];
 
-    TheLibrary.InitializeFirestore();
-    var db = TheLibrary.database,
-        docRef = db.collection("Library").doc("g0uw83YLJsQcMegopfVy");
+//     TheLibrary.InitializeFirestore();
+//     var db = TheLibrary.database,
+//         docRef = db.collection("Library").doc("g0uw83YLJsQcMegopfVy");
 
-    docRef.get().then(function (doc) {
-        if (doc.exists) {
+//     docRef.get().then(function (doc) {
+//         if (doc.exists) {
 
-            var pages = doc.data().BookPages,
-                fontColor,
-                fontSize,
-                pgCounter = 1,
-                tagText = '',
-                tagStyle,
-                element,
-                page;
+//             var pages = doc.data().BookPages,
+//                 fontColor,
+//                 fontSize,
+//                 pgCounter = 1,
+//                 tagText = '',
+//                 tagStyle,
+//                 element,
+//                 page;
 
-            pages.forEach(function (item, id) {
-                if (id > 0) {
-                    tagStyle = '<div style="background-image: url(' + "'images/pg" + pgCounter.toString() + ".JPG')" + '" />';
-                    element = $(tagStyle);
-                    $("#readBook").turn("addPage", element, pgCounter + 3)
+//             pages.forEach(function (item, id) {
+//                 if (id > 0) {
+//                     tagStyle = '<div style="background-image: url(' + "'images/pg" + pgCounter.toString() + ".JPG')" + '" />';
+//                     element = $(tagStyle);
+//                     $("#readBook").turn("addPage", element, pgCounter + 3)
 
-                    tagText = '';
-                    page = (id * 2)
-                    fontColor = doc.data().FontPages[id];
-                    fontSize = doc.data().FontSizePages[id];
+//                     tagText = '';
+//                     page = (id * 2)
+//                     fontColor = doc.data().FontPages[id];
+//                     fontSize = doc.data().FontSizePages[id];
 
-                    tagText += '<p style="font-size:24px !important;padding:15px;text-align:center;">Page ' + page.toString() + '</p><p>'
+//                     tagText += '<p style="font-size:24px !important;padding:15px;text-align:center;">Page ' + page.toString() + '</p><p>'
 
-                    arrWords = item.split(' ');
+//                     arrWords = item.split(' ');
 
-                    arrWords.forEach(function (word) {
-                        tagText += '<a style="color:' + fontColor + ';font-size:' + fontSize + 'px; !important;padding:15px;" href="#" class="wordLink" text="' + word + '">';
-                        tagText += word + '</a> '
-                    });
+//                     arrWords.forEach(function (word) {
+//                         tagText += '<a style="color:' + fontColor + ';font-size:' + fontSize + 'px; !important;padding:15px;" href="#" class="wordLink" text="' + word + '">';
+//                         tagText += word + '</a> '
+//                     });
 
-                    tagText += '</p>'
-                    pgCounter += 2;
-                }
-                element = $('<div class="text-center"/>').html(tagText);
-                $("#readBook").turn("addPage", element, page + 3)
-            })
-        } else {
-            // doc.data() will be undefined in this case
-        }
-    }).catch(function (error) {
-        console.log("Error getting document:", error);
-    });
-});
+//                     tagText += '</p>'
+//                     pgCounter += 2;
+//                 }
+//                 element = $('<div class="text-center"/>').html(tagText);
+//                 $("#readBook").turn("addPage", element, page + 3)
+//             })
+//         } else {
+//             // doc.data() will be undefined in this case
+//         }
+//     }).catch(function (error) {
+//         console.log("Error getting document:", error);
+//     });
+// });
 
-//***************************************************************/
-$(document).on('click', 'a', function (e) {
-    //***************************************************************/
+// //***************************************************************/
+// $(document).on('click', 'a', function (e) {
+//     //***************************************************************/
 
-    e.preventDefault();
+//     e.preventDefault();
 
-    var word = $(this).attr("text");
+//     var word = $(this).attr("text");
 
-    AWS.config.region = 'us-west-1';
-    AWS.config.accessKeyId = 'AKIAI2EZ7T5G64IDZQ6Q';
-    AWS.config.secretAccessKey = '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';
+//     AWS.config.region = 'us-west-1';
+//     AWS.config.accessKeyId = 'AKIAI2EZ7T5G64IDZQ6Q';
+//     AWS.config.secretAccessKey = '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';
 
-    var polly = new AWS.Polly({
-        apiVersion: '2016-06-10'
-    });
-    var params = {
-        OutputFormat: 'mp3',
-        Text: word,
-        VoiceId: 'Kendra',
-        SampleRate: '22050',
-        TextType: 'text'
-    };
+//     var polly = new AWS.Polly({
+//         apiVersion: '2016-06-10'
+//     });
+//     var params = {
+//         OutputFormat: 'mp3',
+//         Text: word,
+//         VoiceId: 'Kendra',
+//         SampleRate: '22050',
+//         TextType: 'text'
+//     };
 
-    polly.synthesizeSpeech(params, function (err, data) {
+//     polly.synthesizeSpeech(params, function (err, data) {
 
-        if (err)
-            console.log(err, err.stack); // an error occurred
-        else {
-            var buf = data.AudioStream.toString('base64');
-            var snd = new Audio("data:audio/mp3;base64," + buf);
-            snd.play();
-        }
-    });
+//         if (err)
+//             console.log(err, err.stack); // an error occurred
+//         else {
+//             var buf = data.AudioStream.toString('base64');
+//             var snd = new Audio("data:audio/mp3;base64," + buf);
+//             snd.play();
+//         }
+//     });
 
-    return false;
-});
+//     return false;
+// });
 
 //***************************************************************/
 $(window).ready(function () {
