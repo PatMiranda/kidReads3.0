@@ -1,0 +1,70 @@
+//Swiper *********************************************************
+
+  /* adjusts the carousel on library and book pages */
+.swiper-container {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+/* adjusts the carousel on library and book pages */
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 300px;
+}
+
+/* adjusts buttons on library page, which are the next two listed */
+.library-buttons {
+  justify-content: center;
+}
+
+.get-book-button {
+  margin-right: 10px;
+  background-color: #A64Ac9;
+  color: #F5E6CC;
+  font-size: 150%;
+  font-weight: bold;
+}
+
+.get-book-button:hover {
+  background-color: #F5E6CC;
+  color: #A64Ac9;
+}
+
+.wishlist-button {
+  margin-left: 10px;
+  background-color: #A64Ac9;
+  color: #F5E6CC;
+  font-size: 150%;
+  font-weight: bold;
+}
+
+.wishlist-button:hover {
+  background-color: #F5E6CC;
+  color: #A64Ac9;
+}
+.read-button {
+  margin-left: 10px;
+  background-color: #A64Ac9;
+  color: #F5E6CC;
+  font-size: 150%;
+  font-weight: bold;
+}
+
+.read-button:hover {
+  background-color: #F5E6CC;
+  color: #A64Ac9;
+}
+
+/* users uploaded info on their homepage */
+.user-info {
+  margin-top: 20px;
+  color: #A64Ac9;
+}
+
+/* list of books the user has competed */
+.books-read {
+  list-style-type: none;
+}
