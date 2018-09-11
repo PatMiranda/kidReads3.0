@@ -1,0 +1,51 @@
+/* Style the links inside the sidenav */
+#mySidenav a {
+  z-index: 100;
+  position: absolute; /* Position them relative to the browser window */
+  left: -160px; /* Position them outside of the screen */
+  transition: 0.3s; /* Add transition on hover */
+  padding: 10px; /* 15px padding */
+  width: 250px; /* Set a specific width */
+  text-decoration: none; /* Remove underline */
+  font-size: 30px; /* Increase font size */
+  color: white; /* White text color */
+  border-radius: 0 15px 15px 0; /* Rounded corners on the top right and bottom right side */
+
+}
+
+#mySidenav a:hover {
+  left: 0; /* On mouse-over, make the elements appear as they should */
+}
+
+/* The about link: 20px from the top with a green background */
+#home {
+  top: 20px;
+  background-color: #4CAF50;
+  height: 100px;
+  text-align: center;
+  line-height: 80px;
+}
+
+#myBooks {
+  top: 180px;
+  background-color: #2196F3; /* Blue */
+  height: 100px;
+  text-align: center;
+  line-height: 80px;
+}
+
+#library {
+  top: 340px;
+  background-color: #f44336; /* Red */
+  height: 100px;
+  text-align: center;
+  line-height: 80px;
+}
+
+#user {
+  top: 500px;
+  background-color: #A64Ac9; /* Light Black */
+  height: 100px;
+  text-align: center;
+  line-height: 80px;
+}

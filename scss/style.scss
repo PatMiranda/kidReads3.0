@@ -1,0 +1,46 @@
+//Imports **************************************************
+@import "reset";
+@import "variables";
+@import "mixins";
+@import "animations";
+@import "sideNav";
+@import "swiper";
+//Imports **************************************************
+
+//Main Style ***********************************************
+
+/* container that holds all content and sets size of page so content can be centered */
+main {
+  background:linear-gradient(#FCCD04 , #FFB48F , #F5E6CC );
+  height: 130vh;
+  font-family: 'Love Ya Like A Sister', cursive;
+  font-weight: bolder;
+}
+
+/* displays title on main page */
+.header {
+  padding-top: 20px;
+  text-align: center;
+  color: #A64Ac9;
+  font-size: 400%;
+}
+
+#mainLinks {
+  padding-top: 20px;
+  justify-content: space-around;
+}
+
+//Main Style ***********************************************
+
+
+
+
+
+
+//********clear fix trick************
+
+//#main-nav  ul:after{
+//  content: '';
+//  display: block;
+//  clear: both;
+//}
