@@ -52,7 +52,9 @@ app.set('view engine', 'html');
 // ROUTES & PASSPORT SET UP
 // =============================================================================
 
-require('./routes/routes.js')(app, passport);
+require('./routes/apiRoutes.js')(app);
+
+require('./routes/htmlRoutes.js')(app, passport);
 
 require('./config/passport.js')(passport, db.user);
 
