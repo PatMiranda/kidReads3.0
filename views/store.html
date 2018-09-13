@@ -263,6 +263,9 @@
                 </p>
                 
         </div>
+        <div class="col-sm-4">
+            <img src="../public/assets/images/kidsReading2.jpg" style="width: 300px">
+        </div>
     </div>
 </div>
 
@@ -351,8 +354,8 @@
             child's app!
         </h4>
     <div class="row">
-        <div class="col-sm-8">
-            <form>
+        <div class="col-sm-6">
+            <form id="form">
                 <div class="form-group">
                     <div class="form-group">
                         <label for="childName">Child's Name:</label>
@@ -380,8 +383,11 @@
                 </div>
                         
         
-                <button type="submit" class="btn btn-default">Submit</button>
+                <button type="submit" class="btn btn-default" id="submitButton">Submit</button>
             </form>
+        </div>
+        <div class="col-sm-4">
+            <img src="../public/assets/images/kidsReading.jpg">
         </div>
     </div>
        
@@ -416,6 +422,11 @@ $("#buyBears").on("click", function(){
     $("#buyBears").css("display", "none");
     $("#boughtBears").css("display", "block");
 
+});
+
+$("#submitButton").on("click", function(){
+    var form = $("#form")
+    form.reset();
 });
 </script>
 
