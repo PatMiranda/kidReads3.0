@@ -12,9 +12,7 @@
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="../public/js/parent.js" type="text/javascript"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-
+  
   <style>
   body {
       font: 400 15px Lato, sans-serif;
@@ -375,7 +373,7 @@
 
                 <div class="form-group">
                     <label for="theme">Theme:</label>
-                    <select name="themes">
+                    <select id="themes">
                         <option value="forest">Forest</option>
                         <option value="fantasy">Fantasy</option>
                         <option value="space">Space</option>
@@ -392,43 +390,8 @@
     </div>
        
 </div>
-<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-<script type="text/javascript">
-$("#buyMoon").on("click", function(){
-    $("#buyMoon").css("display", "none");
-    $("#boughtMoon").css("display", "block");
-});
-$("#buyMouse").on("click", function(){
-    $("#buyMouse").css("display", "none");
-    $("#boughtMouse").css("display", "block");
-
-});
-$("#buyPigeon").on("click", function(){
-    $("#buyPigeon").css("display", "none");
-    $("#boughtPigeon").css("display", "block");
-
-});
-$("#buyGas").on("click", function(){
-    $("#buyGas").css("display", "none");
-    $("#boughtGas").css("display", "block");
-
-});
-$("#buyPooh").on("click", function(){
-    $("#buyPooh").css("display", "none");
-    $("#boughtPooh").css("display", "block");
-
-});
-$("#buyBears").on("click", function(){
-    $("#buyBears").css("display", "none");
-    $("#boughtBears").css("display", "block");
-
-});
-
-$("#submitButton").on("click", function(){
-    var form = $("#form")
-    form.reset();
-});
-</script>
+<script src="../public/js/parent.js" type="text/javascript"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
 
 </body>
