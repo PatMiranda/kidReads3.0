@@ -286,6 +286,7 @@
                 <span>
                     <img src="../assets/images/mouse.jpg" class="book-image">
                 </span>
+                <h4 class="boughtBook" id="boughtMouse" style="display: none">In Library!</h4>
                 <h4>If You Give a Mouse a Cookie</h4>
                 <p>By Laura Joffe Numeroff</p>
                 <button class="btn btn-lg btn-primary" id="buyMouse">Buy</button>
@@ -296,6 +297,7 @@
                 <span >
                     <img src="../assets/images/pigeon.jpg" class="book-image">
                 </span>
+                <h4 class="boughtBook" id="boughtPigeon" style="display: none">In Library!</h4>
                 <h4>Don't Let the Pigeon Drive the Bus!</h4>
                 <p>By Mo Willems</p>
                 <button class="btn btn-lg btn-primary" id="buyPigeon">Buy</button>
@@ -311,6 +313,7 @@
                 <span >
                     <img src="../assets/images/gas.jpg" class="book-image">
                 </span>
+                <h4 class="boughtBook" id="boughtGas" style="display: none">In Library!</h4>
                 <h4>The Gas We Pass</h4>
                 <p>By Shinta Cho</p>
                 <button class="btn btn-lg btn-primary" id="buyGas">Buy</button>
@@ -320,6 +323,8 @@
                 <span>
                     <img src="../public/assets/images/pooh.jpg" class="book-image">
                 </span>
+                <h4 class="boughtBook" id="boughtPooh" style="display: none">In Library!</h4>
+
                 <h4>Pooh's Favorite Things About Spring</h4>
                 <button class="btn btn-lg btn-primary" id="buyPooh">Buy</button>
           
@@ -328,6 +333,8 @@
                 <span>
                     <img src="../public/assets/images/TheBerenstainBears.jpg">
                 </span>
+                <h4 class="boughtBook" id="boughtBears" style="display: none">In Library!</h4>
+
                 <h4>The Berenstain Bears</h4>
                 <p>By Stan and Jan Berenstain</p>
                 <button class="btn btn-lg btn-primary" id="buyBears">Buy</button>
@@ -383,18 +390,28 @@ $("#buyMoon").on("click", function(){
 });
 $("#buyMouse").on("click", function(){
     $("#buyMouse").css("display", "none");
+    $("#boughtMouse").css("display", "block");
+
 });
 $("#buyPigeon").on("click", function(){
     $("#buyPigeon").css("display", "none");
+    $("#boughtPigeon").css("display", "block");
+
 });
 $("#buyGas").on("click", function(){
     $("#buyGas").css("display", "none");
+    $("#boughtGas").css("display", "block");
+
 });
 $("#buyPooh").on("click", function(){
     $("#buyPooh").css("display", "none");
+    $("#boughtPooh").css("display", "block");
+
 });
 $("#buyBears").on("click", function(){
     $("#buyBears").css("display", "none");
+    $("#boughtBears").css("display", "block");
+
 });
 </script>
 
