@@ -5,6 +5,10 @@ module.exports = function(app, passport) {
       res.render("start");
   });
 
+  app.get("/home", function(req, res) {
+      res.render("index");
+  });
+
   app.get('/login', function(req,res){
       res.render('login'); 
   });
