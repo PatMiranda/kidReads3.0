@@ -175,55 +175,22 @@ $(document).ready(function() {
 
 //***************************************************************/
 $(document).on('click', 'a', function (e) {
-//***************************************************************/
-
-    e.preventDefault();
-
-    var word = $(this).attr("text");
-    // var keys = require("./keys");
-    // var polly = new Polly(keys.polly);
-
-    // console.log(polly);
-
-    // var request = require("request");
-
-    // request(process.env.POLLY_REGION, function(error, response, body) {
-    //   console.log(body);
-    // });
-
-    $.get("/api/callpolly/" + word, function(data) {
-        console.log("returned");
-        var buf = data.AudioStream.toString('base64');
-        var snd = new Audio("data:audio/mp3;base64," + buf);
+  //***************************************************************/
+  
+      e.preventDefault();
+  
+      var word = $(this).attr("text");
+  
+      callPolly = function (url, cb) {
+        $.get(url + word, function(data) {
+          cb(data)
+        });
+      }
+  
+      callPolly('/api/callpolly/', function (data) {
+        var snd = new Audio("data:audio/mp3;base64," + data);
         snd.play();
-    });
-
-    // AWS.config.region = "us-west-1"
-    // // AWS.config.accessKeyId = AWS_ACCESS_KEY_ID
-    // // AWS.config.secretAccessKey = AWS_SECRET_ACCESS_KEY
-
-    // var polly = new AWS.Polly({
-    //     apiVersion: '2.311.0'
-    // });
-    // var params = {
-    //     OutputFormat: 'mp3',
-    //     Text: word,
-    //     VoiceId: 'Kendra',
-    //     SampleRate: '22050',
-    //     TextType: 'text'
-    // };
-
-    // polly.synthesizeSpeech(params, function (err, data) {
-
-    //     if (err)
-    //         console.log(err, err.stack); // an error occurred
-    //     else {
-    //         var buf = data.AudioStream.toString('base64');
-    //         var snd = new Audio("data:audio/mp3;base64," + buf);
-    //         snd.play();
-    //     }
-    // });
-
-    return false;
-});
-    
+      });
+  
+      return false;
+  });
