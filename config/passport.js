@@ -90,7 +90,7 @@ module.exports = function(passport, user) {
         function(req, email, password, done) {
             var User = user;
             var isValidPassword = function(userpass, password) {
-                return bCrypt.compareSync(password, userpass);
+                return bcrypt.compareSync(password, userpass);
             }
             
             User.findOne({
