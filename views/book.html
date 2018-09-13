@@ -25,6 +25,26 @@
 
     <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-firestore.js"></script>
+    <style>
+        #shelfMoon {
+            display: none;
+        }
+        #shelfMouse {
+            display: none;
+        }
+        #shelfPooh {
+            display: none;
+        }
+        #shelfBears {
+            display: none;
+        }
+        #shelfGas {
+            display: none;
+        }
+        #shelfPigeon {
+            display: none;
+        }
+    </style>
 </head>
 
 <body>
@@ -54,6 +74,12 @@
     <div class="swiper-container">
         <div class="swiper-wrapper">
             <div class="swiper-slide" style="background-image: url(assets/images/caterpillar.jpg"><button class="btn btn-lg btn-primary" id="read-button">Read!</button></div>
+            <div class="swiper-slide" style="background-image: url(/assets/images/moon.jpg" id="shelfMoon"></div>
+            <div class="swiper-slide" style="background-image: url(assets/images/mouse.jpg" id="shelfMouse"></div>
+            <div class="swiper-slide" style="background-image: url(assets/images/pigeon.jpg" id="shelfPigeon"></div>
+            <div class="swiper-slide" style="background-image: url(assets/images/gas.jpg" id="shelfGas"></div>
+            <div class="swiper-slide" style="background-image: url(assets/images/pooh.jpg" id="shelfPooh"></div>
+            <div class="swiper-slide" style="background-image: url(assets/images/TheBerenstainBears.jpg" id="shelfBears"></div>
         </div>
         <!-- Add Pagination -->
         <div class="swiper-pagination"></div>
