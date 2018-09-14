@@ -3,34 +3,25 @@ var AWS = require("aws-sdk");
 var pollyKey = require("../keys");
 
 module.exports = function(app) {
-  // Get all examples
-  app.get("/api/examples", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.json(dbExamples);
-    });
-  });
 
   // Get book setup
   app.get("/api/booksetup", function(req, res) {
-    db.LibraryBooks_Setup.findAll({}).then(function(results) {
+    db.LibraryBooks_Setup.findAll({ where: { ISBN : '978-0399226908' }}).then(function(results) {
       res.json(results);
     });
   });
 
-  // Create a new example
-  app.post("/api/examples", function(req, res) {
-    db.Example.create(req.body).then(function(dbExample) {
-      res.json(dbExample);
-    });
-  });
-
-  // Delete an example by id
-  app.delete("/api/examples/:id", function(req, res) {
-    db.Example.destroy({ where: { id: req.params.id } }).then(function(
-      dbExample
-    ) {
-      res.json(dbExample);
-    });
+  app.post("/api/createparent", function(req, res) {
+    db.ChildUser.create({
+      ParentId: 1,
+      FirstName: req.body.name,
+      Birthday: req.body.bday,
+      FavoriteAnimal: req.body.favAnimal,
+      SiteTheme: req.body.theme
+    })
+      .then(function(dbPost) {
+        res.json(dbPost);
+      });
   });
 
   app.get("/api/callpolly/:word", function(req, res) {
@@ -60,6 +51,33 @@ module.exports = function(app) {
             res.send(data.AudioStream.toString("base64"))
           }
       }
+    });
+  });
+
+
+  //~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  //~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  // Get all examples
+  app.get("/api/examples", function(req, res) {
+    db.Example.findAll({}).then(function(dbExamples) {
+      res.json(dbExamples);
+    });
+  });
+
+  // Create a new example
+  app.post("/api/examples", function(req, res) {
+    db.Example.create(req.body).then(function(dbExample) {
+      res.json(dbExample);
+    });
+  });
+
+  // Delete an example by id
+  app.delete("/api/examples/:id", function(req, res) {
+    db.Example.destroy({ where: { id: req.params.id } }).then(function(
+      dbExample
+    ) {
+      res.json(dbExample);
     });
   });
 };
