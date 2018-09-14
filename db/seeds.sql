@@ -1,5 +1,11 @@
 INSERT INTO LibraryBooks(ISBN, Title, Author, Description, Available, PageCount)
-VALUES ('978-0399226908', 'The Very Hungry Caterpillar', 'Eric Carle', null, TRUE, 26);
+VALUES ('978-0399226908', 'The Very Hungry Caterpillar', 'Eric Carle', null, TRUE, 26),
+       ('978-0590719421', 'If You Give a Mouse a Cookie', 'Laura Numeroff', null, TRUE, 26),
+       ('978-0916291525', 'The Gas We Pass', 'Shinta Cho', null, TRUE, 26),
+       ('978-0375873669', 'The Berenstain Bears', 'Stan Berenstain', null, TRUE, 26),
+       ('978-8954906142', 'Dont Let the Pigeon Drive the Bus', 'Mo Willems', null, TRUE, 26),
+       ('978-0694010080', 'Goodnight Moon', 'Margaret Wise Brown', null, TRUE, 26),
+       ('978-0717264117', 'Poohs Very Favorite Things About Spring', 'Christopher Robin', null, TRUE, 26);
 
 INSERT INTO LibraryBooks_Setup(ISBN, PageNumber, PageText, PageFontColor, PageFontSize)
 VALUES
@@ -26,4 +32,4 @@ VALUES
     ('978-0399226908', '20', 'The very hungry Caterpillar then ate through one green leaf. He started to feel better.', 'blue', '48'),
     ('978-0399226908', '21', 'Now the caterpillar was no longer small. He was a big fat caterpillar.', 'orange', '48'),
     ('978-0399226908', '22', 'He built a small house, called a cocoon, around himself. He stayed inside for more than two weeks. Then he nibbled a hole in the cocoon, pushed his way out and…….', 'black', '34'),
-    ('978-0399226908', '23', 'A beautiful butterfly! The End.', 'purple', '48')
+    ('978-0399226908', '23', 'A beautiful butterfly! The End.', 'purple', '48');
