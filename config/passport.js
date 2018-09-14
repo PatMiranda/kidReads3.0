@@ -46,12 +46,12 @@ module.exports = function(passport, user) {
 
                 // creates new User
                 User.findOne({
-                    where: { email: email }
+                    where: { 
+                        email: email 
+                    }
                 }).then(function(user) {
                     if (user) {
-                        return done(null, false, {
-                            message: 'That email is already taken'
-                        });
+                        return done(null, false, console.log("That email is already taken"));
                     } 
                         else {
                             var userPassword = generateHash(password);
@@ -66,10 +66,10 @@ module.exports = function(passport, user) {
                             User.create(data).then(function(newUser, created) {
                 
                                 if (!newUser) {
-                                    return done(null, false);
+                                    return done(null, false, console.log("error, error, error"));
                                 }
                                 if (newUser) {
-                                    return done(null, newUser);
+                                    return done(null, newUser, console.log("created" + newUser));
                                 }
                             });
                         }
@@ -99,14 +99,10 @@ module.exports = function(passport, user) {
                 }
             }).then(function(user) {
                 if (!user) {
-                    return done(null, false, {
-                        message: 'Email does not exist'
-                    });
+                    return done(null, false, console.log("Email does not exist"));
                 }
                 if (!isValidPassword(user.password, password)) {
-                    return done(null, false, {
-                        message: 'Incorrect password.'
-                    });
+                    return done(null, false, console.log("Incorrect Password."));
                 }
                 var userinfo = user.get();
                 
@@ -114,9 +110,7 @@ module.exports = function(passport, user) {
             
             }).catch(function(err) {
                 console.log("Error:", err);
-                return done(null, false, {
-                    message: 'Something went wrong with your Signin'
-                });
+                return done(null, false, console.log(err));
             });
         }
     ));

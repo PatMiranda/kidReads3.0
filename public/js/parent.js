@@ -38,6 +38,7 @@ $(document).ready(function() {
     var bDay = $("input#bday");
     var theme = $("#themes")
   
+
     kidForm.on("submit", function(event) {
       event.preventDefault();
       var childData = {
@@ -57,6 +58,7 @@ $(document).ready(function() {
     });
   
     // loginUser does a post to our "api/login" route and if successful, redirects us the the members page
+
     // function loginUser(email, password) {
     //   $.post("/api/login", {
     //     email: email,

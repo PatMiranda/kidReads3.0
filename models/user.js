@@ -39,6 +39,32 @@ module.exports = function(sequelize, Sequelize) {
             defaultValue: 'active'
         }
     });
-
+    
     return User;
-};
+}
+
+// module.exports = function(sequelize, DataTypes) {
+//     var User = sequelize.define("user", {
+      
+//       ParentId: { type: DataTypes.INTEGER, primaryKey: true },
+//       ChildId: DataTypes.INTEGER,
+//       EmailAddress: DataTypes.STRING,
+//       UserName: DataTypes.STRING,
+//       Password: DataTypes.TEXT,
+//       FirstName: DataTypes.STRING,
+//       LastName: DataTypes.STRING,
+//       AddressStreet1: DataTypes.STRING,
+//       AddressStreet2: DataTypes.STRING,
+//       AddressCity: DataTypes.STRING,
+//       AddressState: DataTypes.STRING,
+//       AddressZip: DataTypes.STRING,
+//       LastSignOn: DataTypes.DATE,
+//       createdAt: DataTypes.DATE,
+//       updatedAt: DataTypes.DATE
+//     },
+//     {
+//       tableName: 'ParentUser'
+//     });
+
+//     return User;
+// };
