@@ -6,7 +6,7 @@ module.exports = function(app) {
 
   // Get book setup
   app.get("/api/booksetup", function(req, res) {
-    db.LibraryBooks_Setup.findAll({}).then(function(results) {
+    db.LibraryBooks_Setup.findAll({ where: { ISBN : '978-0399226908' }}).then(function(results) {
       res.json(results);
     });
   });
