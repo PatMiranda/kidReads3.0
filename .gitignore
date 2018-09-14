@@ -1,6 +1,5 @@
 node_modules
 .travis.yml
-config.json
 .DS_store
 .idea
 .env
