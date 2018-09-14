@@ -35,7 +35,7 @@ CREATE TABLE LibraryBooks_Setup (
 );
 
 CREATE TABLE ParentUser (
-    ParentId VARCHAR(20) NOT NULL,
+    ParentId INT NOT NULL AUTO_INCREMENT,
     ChildId VARCHAR(20) NOT NULL,
     EmailAddress VARCHAR(50) NULL,
     UserName VARCHAR(20) NULL,
@@ -55,7 +55,7 @@ CREATE TABLE ParentUser (
 );
 
 CREATE TABLE ChildUser(
-    ChildId VARCHAR(20) NOT NULL,
+    ChildId INT NOT NULL AUTO_INCREMENT,
     ParentId VARCHAR(20) NOT NULL,
     UserName VARCHAR(20) NULL,
     Password VARCHAR(20) NULL,

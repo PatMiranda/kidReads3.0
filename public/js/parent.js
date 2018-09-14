@@ -38,16 +38,18 @@ $(document).ready(function() {
     var bDay = $("input#bday");
     var theme = $("#themes")
   
-    // When the form is submitted, we validate there's an email and password entered
+    
     kidForm.on("submit", function(event) {
-      event.preventDefault();
-      var userData = {
+        
+        event.preventDefault();
+         var userData = {
         name: kidName.val().trim(),
         favAnimal: favAnimal.val().trim(),
         profilePic: profilePic.val().trim(),
         bday: bDay.val(),
         theme: theme.val()
       };
+      
       // If we have an email and password we run the loginUser function and clear the form
       form.reset();
       console.log("this is the user data" + JSON.stringify(userData));
