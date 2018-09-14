@@ -36,7 +36,7 @@ CREATE TABLE LibraryBooks_Setup (
 
 CREATE TABLE ParentUser (
     ParentId INT NOT NULL AUTO_INCREMENT,
-    ChildId VARCHAR(20) NOT NULL,
+    ChildId INT NOT NULL,
     EmailAddress VARCHAR(50) NULL,
     UserName VARCHAR(20) NULL,
     Password VARCHAR(20) NULL,
@@ -56,12 +56,12 @@ CREATE TABLE ParentUser (
 
 CREATE TABLE ChildUser(
     ChildId INT NOT NULL AUTO_INCREMENT,
-    ParentId VARCHAR(20) NOT NULL,
-    UserName VARCHAR(20) NULL,
-    Password VARCHAR(20) NULL,
+    ParentId INT NOT NULL,
     FirstName VARCHAR(25) NULL,
     LastName VARCHAR(25) NULL,
     Birthday VARCHAR(5) NULL,
+    FavoriteAnimal VARCHAR(35) NULL,
+    SiteTheme VARCHAR(25) NULL,
     LastSignOn DATETIME NULL,
     createdAt TIMESTAMP DEFAULT NOW() ON UPDATE NOW() NULL,
     updatedAt TIMESTAMP DEFAULT NOW() ON UPDATE NOW() NULL,
@@ -69,22 +69,16 @@ CREATE TABLE ChildUser(
     PRIMARY KEY (ChildId)
 );
 
-ALTER TABLE ParentUser
-    ADD FOREIGN KEY fk_childId(ChildId)
-    REFERENCES ChildUser(ChildId)
-    ON UPDATE CASCADE
-    ON DELETE RESTRICT
-
 ALTER TABLE ChildUser
     ADD FOREIGN KEY fk_parentId(ParentId)
     REFERENCES ParentUser(ParentId)
     ON UPDATE CASCADE
-    ON DELETE RESTRICT
+    ON DELETE RESTRICT;
 
 CREATE TABLE ParentBooks (
     Id INT NOT NULL AUTO_INCREMENT,
     ISBN VARCHAR(50) NOT NULL,
-    ParentId VARCHAR(20) NOT NULL,
+    ParentId INT NOT NULL,
     LastAccessed DATETIME,
     createdAt TIMESTAMP DEFAULT NOW() ON UPDATE NOW() NULL,
     updatedAt TIMESTAMP DEFAULT NOW() ON UPDATE NOW() NULL,
@@ -103,7 +97,7 @@ CREATE TABLE ParentBooks (
 CREATE TABLE ChildBooks (
     Id INT NOT NULL AUTO_INCREMENT,
     ISBN VARCHAR(50) NOT NULL,
-    ChildId VARCHAR(20) NOT NULL,
+    ChildId INT NOT NULL,
     LastAccessed DATETIME NULL,
     createdAt TIMESTAMP DEFAULT NOW() ON UPDATE NOW() NULL,
     updatedAt TIMESTAMP DEFAULT NOW() ON UPDATE NOW() NULL,

@@ -14,6 +14,8 @@ $(document).ready(function() {
         });
     }
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     // This function resets the todos displayed with new todos from the database
     function initializeRows() {
       $todoContainer.empty();
@@ -118,6 +120,9 @@ $(document).ready(function() {
       $.post("/api/todos", todo, getTodos);
       $newItemInput.val("");
     }
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 
     function initializeBook() {
         var arrWords = [];
