@@ -39,5 +39,6 @@ module.exports = function(sequelize, Sequelize) {
             defaultValue: 'active'
         }
     });
+
     return User;
-}
+};
