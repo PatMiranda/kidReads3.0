@@ -1,0 +1,203 @@
+//Space*******************************************
+//Space*******************************************
+
+#spaceBack {
+  z-index: 0;
+  margin-left: -200px;
+  margin-top: -160px;
+  max-width: 1600px;
+  display: block;
+  background-size:auto;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#moon{
+  position: absolute;
+  margin-right: 0px;
+  text-align: center;
+  z-index: 2;
+  height: 1.5em;
+  margin-top: 380px;
+  display: block;
+  margin-left: 155px;
+  //margin-right: ;
+  -webkit-animation-duration: 20s;
+  //-webkit-animation-delay: ;
+  -webkit-animation-iteration-count: infinite;
+  //animation-name: spinner;
+
+}
+
+#pluto{
+  position: absolute;
+  margin-right: 0px;
+  text-align: center;
+  z-index: 2;
+  height: 3.0em;
+  margin-top: 650px;
+  display: block;
+  margin-left: 0px;
+  //margin-right: ;
+  -webkit-animation-duration: 2s;
+  //-webkit-animation-delay: ;
+  -webkit-animation-iteration-count: infinite;
+  //animation-name: floater ;
+
+}
+
+#neptune{
+  position: absolute;
+  margin-right: 0px;
+  text-align: center;
+  z-index: 2;
+  height: 7.0em;
+  margin-top: 185px;
+  display: block;
+  margin-left: 610px;
+  //margin-right: ;
+  -webkit-animation-duration: 2s;
+  //-webkit-animation-delay: ;
+  -webkit-animation-iteration-count: infinite;
+  //animation-name: rotateInRight ;
+
+}
+
+#earth{
+  position: absolute;
+  margin-right: 0px;
+  text-align: center;
+  z-index: 3;
+  height: 9.0em;
+  margin-top: 400px;
+  display: block;
+  margin-left: 145px;
+  //margin-right: ;
+  -webkit-animation-duration: 60s;
+  //-webkit-animation-delay: ;
+  -webkit-animation-iteration-count: infinite;
+  animation-name: spinner ;
+
+}
+
+#sun{
+  position: absolute;
+  margin-right: 0px;
+  text-align: center;
+  z-index: 2;
+  height: 15.0em;
+  margin-top: 210px;
+  display: block;
+  margin-left: 245px;
+  //margin-right: ;
+  -webkit-animation-duration: 10s;
+  //-webkit-animation-delay: ;
+  -webkit-animation-iteration-count: infinite;
+  animation-name: pulse ;
+
+}
+
+#saturn{
+  position: absolute;
+  margin-right: 0px;
+  text-align: center;
+  z-index: 2;
+  height: 4.0em;
+  margin-top: 380px;
+  display: block;
+  margin-left: 645px;
+  //margin-right: ;
+  -webkit-animation-duration: 30s;
+  //-webkit-animation-delay: ;
+  -webkit-animation-iteration-count: infinite;
+  animation-name: spinner ;
+
+}
+
+#uranus{
+  position: absolute;
+  margin-right: 0px;
+  text-align: center;
+  z-index: 2;
+  height: 3.5em;
+  margin-top: 250px;
+  display: block;
+  margin-left: -350px;
+  margin-right: 1350px;
+  //margin-right: ;
+  -webkit-animation-duration: 20s;
+  //-webkit-animation-delay: ;
+  -webkit-animation-iteration-count: infinite;
+  animation-name: fadeInLeftBig ;
+
+}
+
+#venus{
+  position: absolute;
+  margin-right: 0px;
+  text-align: center;
+  z-index: 2;
+  height: 5.0em;
+  margin-top: 500px;
+  display: block;
+  margin-left: 845px;
+  //margin-right: ;
+  -webkit-animation-duration: 2s;
+  //-webkit-animation-delay: ;
+  -webkit-animation-iteration-count: infinite;
+  //animation-name: floater ;
+
+}
+
+#ship{
+  cursor: progress;
+  position: absolute;
+  margin-right: 0px;
+  text-align: center;
+  z-index: 2;
+  height: 10.0em;
+  margin-top: 580px;
+  display: block;
+  margin-left: 655px;
+  //margin-right: ;
+  -webkit-animation-duration: 4s;
+  //-webkit-animation-delay: ;
+  -webkit-animation-iteration-count: infinite;
+  animation-name: floater ;
+
+}
+
+#astro{
+  cursor: progress;
+  position: absolute;
+  margin-right: 0px;
+  text-align: center;
+  z-index: 2;
+  height: 18.0em;
+  margin-top: 560px;
+  display: block;
+  margin-left: 280px;
+  //margin-right: ;
+  -webkit-animation-duration: 10s;
+  //-webkit-animation-delay: ;
+  -webkit-animation-iteration-count: 1;
+  animation-name: lightSpeedIn ;
+
+}
+
+#alien{
+  position: absolute;
+  margin-right: 0px;
+  text-align: center;
+  z-index: 0;
+  height:   10.5em;
+  margin-top: 725px;
+  display: block;
+  margin-left: 1250px;
+  //margin-right: ;
+  -webkit-animation-duration: 25s;
+  //-webkit-animation-delay: ;
+  -webkit-animation-iteration-count: infinite;
+  animation-name: fadeInLeftBig ;
+
+}
