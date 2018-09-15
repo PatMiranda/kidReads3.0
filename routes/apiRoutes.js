@@ -11,9 +11,9 @@ module.exports = function(app) {
     });
   });
 
-  app.post("/api/createparent", function(req, res) {
-    db.ChildUser.create({
-      ParentId: 1,
+  app.post("/api/createchild/:parentId", function(req, res) {
+    db.ChildUsers.create({
+      ParentId: req.params.parentId,
       FirstName: req.body.name,
       Birthday: req.body.bday,
       FavoriteAnimal: req.body.favAnimal,
@@ -22,6 +22,23 @@ module.exports = function(app) {
       .then(function(dbPost) {
         res.json(dbPost);
       });
+  });
+
+  app.post("/api/purchasebook/:id/:isbn", function(req, res) {
+    db.ParentBooks.create({
+      ParentId: req.params.id,
+      ISBN: req.params.isbn
+    })
+      .then(function(dbPost) {
+        res.json(dbPost);
+      });
+  });
+
+  app.get("/api/getparentid/:email", function(req, res) {
+
+    db.user.findOne({ where: { email : req.params.email }}).then(function(results) {
+      res.json(results);
+    });
   });
 
   app.get("/api/callpolly/:word", function(req, res) {

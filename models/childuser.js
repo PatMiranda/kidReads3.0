@@ -1,7 +1,7 @@
 module.exports = function(sequelize, Sequelize) {
-    var ChildUser = sequelize.define("ChildUser", {
+    var ChildUser = sequelize.define("ChildUsers", {
       
-      ChildId: { type: Sequelize.INTEGER, primaryKey: true },
+      ChildId: { type: Sequelize.INTEGER, autoIncrement: true, primaryKey: true },
       ParentId: Sequelize.INTEGER,
       FirstName: Sequelize.STRING,
       LastName: Sequelize.STRING,
@@ -10,7 +10,7 @@ module.exports = function(sequelize, Sequelize) {
       SiteTheme: Sequelize.STRING
     },
     {
-      tableName: 'ChildUser'
+      tableName: 'ChildUsers'
     });
 
     return ChildUser;
