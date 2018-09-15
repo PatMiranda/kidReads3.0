@@ -1,60 +1,88 @@
 module.exports = function(app, passport) {
-
-  // Load start page
+  // LANDING PAGE
   app.get("/", function(req, res) {
-      res.render("start");
+    res.render("start");
   });
 
-  app.get("/home", function(req, res) {
-      res.render("index");
+  // LOGIN
+  app.get("/login", function(req, res) {
+    res.render("login");
   });
 
-  app.get('/login', function(req,res){
-      res.render('login'); 
+  app.post(
+    "/login",
+    passport.authenticate("local-signin", {
+      successRedirect: "/select",
+      failureRedirect: "/login"
+    }),
+    function(req, res) {
+      console.log("hello");
+
+      if (req.body.remember) {
+        req.session.cookie.maxAge = 1000 * 60 * 60 * 3;
+      } else {
+        req.session.cookie.expires = false;
+      }
+      res.redirect("/");
+    }
+  );
+
+  // SIGN UP
+  app.get("/signup", function(req, res) {
+    res.render("signup");
   });
 
-  app.post('/login', passport.authenticate('local-signin', {
-      successRedirect: '/select',
-      failureRedirect: '/login'
-  }));
+  app.post(
+    "/signup",
+    passport.authenticate("local-signup", {
+      successRedirect: "/select",
+      failureRedirect: "/signup"
+    })
+  );
 
-  app.get('/signup', function(req,res){
-      res.render('signup'); 
-  });
-  
-  app.post('/signup', passport.authenticate('local-signup', {
-      successRedirect: '/select',
-      failureRedirect: '/signup'
-  }));
-
-  app.get('/select',isLoggedIn, function(req,res){
-      res.render('select'); 
+  // HOME PAGE SELECT
+  app.get("/select", isLoggedIn, function(req, res) {
+    res.render("select");
   });
 
-  // Load example page and pass in an example by id
-  app.get("/books", function(req, res) {
-      res.render("book");
+  // KIDS HOMEPAGE
+  app.get("/home", isLoggedIn, function(req, res) {
+    res.render("index");
   });
 
-  app.get("/user", function(req, res) {
-      res.render("user");
+  // BOOKS
+  app.get("/books", isLoggedIn, function(req, res) {
+    res.render("book");
   });
-  app.get("/parent", function(req, res) {
+
+  // KIDS USER PAGE
+  app.get("/user", isLoggedIn, function(req, res) {
+    res.render("user");
+  });
+
+  // PARENT HOME PAGE
+  app.get("/parent", isLoggedIn, function(req, res) {
     res.render("store");
   });
-  
-  // Render 404 page for any unmatched routes
+
+  // LOGOUT
+  app.get("/logout", function(req, res) {
+    req.logout();
+    req.session.destroy();
+    res.redirect("/");
+    // res.send("logged out");
+  });
+
+  // 404
   app.get("*", function(req, res) {
-      res.render("404");
+    res.render("404");
   });
-
-  app.get('/logout', function(req,res){
-      res.render('logout'); 
-  });
-
-  function isLoggedIn(req, res, next) {
-      if (req.isAuthenticated())
-          return next();  
-      res.redirect('/login');
-  };
 };
+
+// MIDDLEWARE (LOGIN CHECK)
+function isLoggedIn(req, res, next) {
+  if (req.isAuthenticated()) {
+    return next();
+  }
+  res.redirect("/login");
+}
