@@ -1,11 +1,7 @@
 {
     "development": {
       "username": "root",
-<<<<<<< HEAD
-      "password": "Ledger88",
-=======
-      "password": "root",
->>>>>>> 42dc778c37ec01c1328202e60dd8e949d9a96741
+      "password": "",
       "database": "KidReads_DB",
       "host": "127.0.0.1",
       "port": 3306,
