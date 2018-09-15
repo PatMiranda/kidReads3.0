@@ -1,4 +1,6 @@
+
 module.exports = function(app, passport) {
+
   // LANDING PAGE
   app.get("/", function(req, res) {
     res.render("start");

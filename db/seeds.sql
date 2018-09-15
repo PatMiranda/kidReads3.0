@@ -1,11 +1,11 @@
-INSERT INTO LibraryBooks(ISBN, Title, Author, Description, Available, PageCount)
-VALUES ('978-0399226908', 'The Very Hungry Caterpillar', 'Eric Carle', null, TRUE, 26),
-       ('978-0590719421', 'If You Give a Mouse a Cookie', 'Laura Numeroff', null, TRUE, 26),
-       ('978-0916291525', 'The Gas We Pass', 'Shinta Cho', null, TRUE, 26),
-       ('978-0375873669', 'The Berenstain Bears', 'Stan Berenstain', null, TRUE, 26),
-       ('978-8954906142', 'Dont Let the Pigeon Drive the Bus', 'Mo Willems', null, TRUE, 26),
-       ('978-0694010080', 'Goodnight Moon', 'Margaret Wise Brown', null, TRUE, 26),
-       ('978-0717264117', 'Poohs Very Favorite Things About Spring', 'Christopher Robin', null, TRUE, 26);
+INSERT INTO LibraryBooks(ISBN, Title, Author, Description, Available, PageCount, CoverImageFilePath)
+VALUES ('978-0399226908', 'The Very Hungry Caterpillar', 'Eric Carle', null, TRUE, 26, '../assets/images/caterpillar.jpg'),
+       ('978-0590719421', 'If You Give a Mouse a Cookie', 'Laura Numeroff', null, TRUE, 26, '../assets/images/mouse.jpg'),
+       ('978-0916291525', 'The Gas We Pass', 'Shinta Cho', null, TRUE, 26, '../assets/images/gas.jpg'),
+       ('978-0375873669', 'The Berenstain Bears', 'Stan Berenstain', null, TRUE, 26, '../assets/images/TheBerenstainBears.jpg'),
+       ('978-8954906142', 'Dont Let the Pigeon Drive the Bus', 'Mo Willems', null, TRUE, 26, '../assets/images/pigeon.jpg'),
+       ('978-0694010080', 'Goodnight Moon', 'Margaret Wise Brown', null, TRUE, 26, '../assets/images/moon.jpg'),
+       ('978-0717264117', 'Poohs Very Favorite Things About Spring', 'Christopher Robin', null, TRUE, 26, '../assets/images/pooh.jpg');
 
 INSERT INTO LibraryBooks_Setup(ISBN, PageNumber, PageText, PageFontColor, PageFontSize)
 VALUES

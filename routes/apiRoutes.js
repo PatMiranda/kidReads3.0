@@ -5,8 +5,21 @@ var pollyKey = require("../keys");
 module.exports = function(app) {
 
   // Get book setup
-  app.get("/api/booksetup", function(req, res) {
-    db.LibraryBooks_Setup.findAll({ where: { ISBN : '978-0399226908' }}).then(function(results) {
+  app.get("/api/booksetup/:ISBN", function(req, res) {
+    db.LibraryBooks_Setup.findAll({ where: { ISBN : req.params.ISBN }}).then(function(results) {
+      res.json(results);
+    });
+  });
+
+  // Get book list
+  app.get("/api/getchildbooks/:childId", function(req, res) {
+    db.ChildBooks.findAll({ where: { ChildId : req.params.childId }}).then(function(results) {
+      res.json(results);
+    });
+  });
+
+  app.get("/api/getthebook/:ISBN", function(req, res) {
+    db.LibraryBooks.findOne({ where: { ISBN : req.params.ISBN }}).then(function(results) {
       res.json(results);
     });
   });
@@ -41,6 +54,12 @@ module.exports = function(app) {
     });
   });
 
+  app.get("/api/getchildid/:parentId", function(req, res) {
+    db.ChildUsers.findOne({ where: { ParentId : req.params.parentId }}).then(function(results) {
+      res.json(results);
+    });
+  });
+
   app.get("/api/callpolly/:word", function(req, res) {
 
     AWS.config.region = Object(pollyKey.polly.region).toString();
@@ -68,33 +87,6 @@ module.exports = function(app) {
             res.send(data.AudioStream.toString("base64"))
           }
       }
-    });
-  });
-
-
-  //~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  //~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-  // Get all examples
-  app.get("/api/examples", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.json(dbExamples);
-    });
-  });
-
-  // Create a new example
-  app.post("/api/examples", function(req, res) {
-    db.Example.create(req.body).then(function(dbExample) {
-      res.json(dbExample);
-    });
-  });
-
-  // Delete an example by id
-  app.delete("/api/examples/:id", function(req, res) {
-    db.Example.destroy({ where: { id: req.params.id } }).then(function(
-      dbExample
-    ) {
-      res.json(dbExample);
     });
   });
 };
