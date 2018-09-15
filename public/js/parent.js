@@ -2,6 +2,8 @@ $("#buyMoon").on("click", function(){
     $("#buyMoon").css("display", "none");
     $("#boughtMoon").css("display", "block");
     var ISBN = this.value;
+    console.log(ISBN)
+    console.log(sessionStorage.kr_email)
 
     $.get("/api/getparentid/" + sessionStorage.kr_email, function(data) {
         var parentID = data.id;

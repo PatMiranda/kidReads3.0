@@ -1,7 +1,7 @@
 module.exports = function(sequelize, Sequelize) {
     var ParentBook = sequelize.define("ParentBooks", {
       
-      id: { type: Sequelize.INTEGER, primaryKey: true },
+      id: { type: Sequelize.INTEGER, autoIncrement: true, primaryKey: true },
       ParentId: Sequelize.INTEGER,
       ISBN: Sequelize.STRING
     },
