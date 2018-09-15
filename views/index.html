@@ -18,7 +18,7 @@
     <!--<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> &ndash;&gt;-->
 
 </head>
-<body>
+<body background="">
 
 
 
@@ -29,145 +29,158 @@
 
 
         <!--Header-->
-
         <div class="row">
             <div class="col-12">
-                <span class="header1">KidReads</span>
+                <span class="header1">KidReads
+                    <a id="defaultDisplay" class="themeLinks">FOREST &nbsp;</a>
+                    <a id="fanDisplay" class="themeLinks">FANTASY &nbsp;</a>
+                    <a id="spaceDisplay" class="themeLinks">SPACE &nbsp;</a>
+                </span>
             </div>
         </div>
+        <!--<button class ="btn btn-outline-success btn-sm" id="defaultDisplay">Default</button>-->
+        <!--<button class ="btn btn-outline-success btn-sm" id="fanDisplay">Fantasy</button>-->
+        <!--<button class ="btn btn-outline-success btn-sm" id="spaceDisplay">Space</button>-->
+
 
 
         <!--Nav Bar-->
         <div id="mySidenav" class="sidenav">
-            <a href="/home" id="home">Home<img src="assets/images/home.png" height="70px" align="right"></a>
-            <a href="/books" id="myBooks">My Books<img src="assets/images/books3.png" height="78px" align="right"></a>
-            <a href="/user" id="library">User<img src="assets/images/library.png" height="80px" align="right"></a>
-
+            <a href="/home" id="home">Home<img src="assets/images/landing/home.png" height="70px" align="right"></a>
+            <a href="/books" id="myBooks">My Books<img src="assets/images/landing/books3.png" height="78px" align="right"></a>
+            <a href="/user" id="library">User<img src="assets/images/landing/library.png" height="80px" align="right"></a>
         </div>
 
-        <div>
-            <button class ="btn btn-small btn-dark" id="defaultDisplay">Default</button>
-            <button class ="btn btn-small btn-dark" id="fanDisplay">Fantasy</button>
-        </div>
-
-        <!--************************************************************************************************************************-->
-        <!--************************************************************************************************************************-->
 
 
+<!--************************************************************************************************************************-->
+<!--O.G. LANDING PAGE-->
+<!--************************************************************************************************************************-->
 
         <!--Images for the O.G. landing page-->
         <div class="container" id="landing" style="display: block">
-        <div class="row">
-        <div class="col-7">
-        <img src="assets/images/cloud2.png" id="cloud" class="">
-        <img src="assets/images/cloud2.png" id="cloud2" class="wiggle">
+            <div class="row">
+                <div class="col-7">
+                    <img src="/assets/images/landing/cloud2.png" id="cloud" class="">
+                    <img src="/assets/images/landing/cloud2.png" id="cloud2" class="wiggle">
+                </div>
+
+                <div class="col-1">
+                    <img src="/assets/images/landing/cloud2.png" id="cloud1">
+                </div>
+
+                <div class="col-2">
+                    <img src="/assets/images/landing/cloud2.png" id="cloud3" class="wiggle">
+                    <img src="/assets/images/landing/cloud2.png" id="cloud4" class="">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-5">
+                    <img src="/assets/images/landing/treeHouse1.png" id="treeHouse"  class="">
+                </div>
+                <div class="col-1">
+                    <img src="/assets/images/landing/path.png" id="path"  class="">
+                </div>
+                <div class="col-1">
+                    <img src="/assets/images/landing/plant1.png" id="tree1"  class="">
+                </div>
+
+                <!--Main Input-->
+                <div class="row" id="mainLinks">
+                    <div class="col-sm">
+                        <a href="/books" id="books"><img src="/assets/images/landing/books3.png" height="125px" title="My Books">My Books</a>
+                    </div>
+                    <div class="col-sm">
+
+                    </div>
+                    <div class="col-sm">
+                        <a href="/user" id="libraryIcon"><img src="/assets/images/landing/library.png" height="150px" title="User Page">&nbsp;User</a>
+                    </div>
+                </div>
+
+            </div>
         </div>
 
-        <div class="col-1">
-        <img src="assets/images/cloud2.png" id="cloud1">
-        <!--      <img src="assets/images/cloud2.png" id="cloud2">-->
-        </div>
+<!--************************************************************************************************************************-->
+<!--FANTASY-->
+<!--************************************************************************************************************************-->
 
-        <div class="col-2">
-        <img src="assets/images/cloud2.png" id="cloud3" class="wiggle">
-        <img src="assets/images/cloud2.png" id="cloud4" class="">
-        </div>
-        </div>
-
-        <div class="row">
-        <div class="col-5">
-        <img src="assets/images/treeHouse1.png" id="treeHouse"  class="">
-        </div>
-        <div class="col-1">
-        <img src="assets/images/path.png" id="path"  class="">
-        </div>
-        <div class="col-1">
-        <img src="assets/images/plant1.png" id="tree1"  class="">
-        </div>
-
-        <!--Main Input-->
-        <div class="row" id="mainLinks">
-        <div class="col-sm">
-        <a href="book.html" id="books"><img src="assets/images/books3.png" height="125px" align="" >My Books</a>
-        </div>
-        <div class="col-sm">
-
-        </div>
-        <div class="col-sm">
-        <a href="user.html" id="libraryIcon"><img src="assets/images/library.png" height="150px" align="">&nbsp;User</a>
-        </div>
-        </div>
-
-        </div>
-        </div>
-        </div>
-        </div>
-
-
-        <!--************************************************************************************************************************-->
-        <!--************************************************************************************************************************-->
-
-
-
-        <!--Images for the Fantasy page-->
+        <!--Images for the FANTASY page-->
         <div class="container" id="fantasy" style="display: none">
             <div class="row">
                 <div class="col-7">
 
-                    <img src="assets/images/cloud2.png" id="cloud" class="">
-                    <img src="assets/images/cloud2.png" id="cloud2" class="wiggle">
+                    <img src="/assets/images/fantasy/cloud2.png" id="cloud" class="">
+                    <img src="/assets/images/fantasy/cloud2.png" id="cloud2" class="wiggle">
                 </div>
 
                 <div class="col-1">
-                    <img src="assets/images/cloud2.png" id="cloud1">
-                    <!--      <img src="assets/images/cloud2.png" id="cloud2">-->
+                    <img src="/assets/images/fantasy/cloud2.png" id="cloud1">
                 </div>
 
                 <div class="col-2">
-                    <img src="assets/images/cloud2.png" id="cloud3" class="wiggle">
-                    <img src="assets/images/cloud2.png" id="cloud4" class="">
+                    <img src="/assets/images/fantasy/cloud2.png" id="cloud3" class="wiggle">
+                    <img src="/assets/images/fantasy/cloud2.png" id="cloud4" class="">
 
                 </div>
             </div>
 
             <div class="row">
-                <div class="col-1">
-                    <!--<img src="assets/images/fBack.png" id="fBack"  class="">-->
-                </div>
-                <div class="col-1">
-                    <!--<img src="assets/images/path.png" id="path"  class="">-->
-                </div>
-                <div class="col-1">
-                    <!--<img src="assets/images/plant1.png" id="tree1"  class="">-->
+
+                <div class="col-3">
+                    <a href="/books"><img src="/assets/images/fantasy/tinker.png" id="tinker" title="User Page"></a>
                 </div>
 
                 <!--Main Input-->
                 <div class="row" id="mainLinks">
                     <div class="col-4">
-                        <!--<a href="book.html" id="fanBooks"><img src="assets/images/books3.png" height="125px" align="" >My Books</a>-->
-                    </div>
-                    <div class="col-1">
-
-                    </div>
-                    <div class="col-4">
-                        <a href="user.html" ><img src="assets/images/castle2.png" height="" align="" id="fanCastle"></a>
+                        <a href="/user" ><img src="/assets/images/fantasy/castle2.png" id="fanCastle" title="My Books"></a>
                     </div>
                 </div>
 
                 <div class="row" id="">
                     <div class="col-12">
-                        <img src="assets/images/fBack.png" id="fBack"  class="">
+                        <img src="/assets/images/fantasy/fBack.png" id="fBack"  class="">
                     </div>
-
+                    <div>
+                        <img src="/assets/images/fantasy/frog.png" id="frog"  class="">
+                    </div>
                 </div>
 
             </div>
-    </div>
-    </div>
+        </div>
+
+<!--************************************************************************************************************************-->
+<!--SPACE-->
+<!--************************************************************************************************************************-->
+
+            <!--Images for the SPACE page-->
+            <div class="container" id="space" style="display: none">
+
+                <img src="/assets/images/space/bwMoon.png" id="moon">
+                <img src="/assets/images/space/pluto.png" id="pluto">
+                <img src="/assets/images/space/neptune.png" id="neptune">
+                <img src="/assets/images/space/earth.png" id="earth">
+                <img src="/assets/images/space/sun.png" id="sun">
+                <img src="/assets/images/space/saturn.png" id="saturn">
+                <img src="/assets/images/space/uranus.png" id="uranus">
+                <img src="/assets/images/space/venus.png" id="venus">
+
+                    <!--Main Input-->
+                    <a href="/books"><img src="/assets/images/space/verticalShip.png" id="ship" title="My Books"></a>
+
+                    <a href="/user" ><img src="/assets/images/space/astro2.png" id="astro" title="User Page"></a>
+
+                <img src="/assets/images/space/alien.png" id="alien">
+                <img src="/assets/images/space/deepSpaceBack2.png" id="spaceBack">
 
 
-    <!--************************************************************************************************************************    -->
-    <!--************************************************************************************************************************    -->
+            </div>
+
+<!--************************************************************************************************************************    -->
+<!--END CONTAINERS    -->
+<!--************************************************************************************************************************    -->
 
 
 </main>
@@ -177,17 +190,39 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.3.2/js/mdb.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+<!--************************************************************************************************************************    -->
+<!--THEME BUTTON SCRIPT   -->
+<!--************************************************************************************************************************    -->
+
 <script type="text/javascript">
 
   $("#defaultDisplay").on("click", function () {
     $("#landing").css("display", "block");
     $("#fantasy").css("display", "none");
+    $("#space").css("display", "none");
+    $("#jungle").css("display", "none");
+    $("#dragons").css("display", "none");
   });
 
   $("#fanDisplay").on("click", function () {
     $("#landing").css("display", "none");
     $("#fantasy").css("display", "block");
+    $("#space").css("display", "none");
+    $("#jungle").css("display", "none");
+    $("#dragons").css("display", "none");
   });
+
+  $("#spaceDisplay").on("click", function () {
+    $("#landing").css("display", "none");
+    $("#fantasy").css("display", "none");
+    $("#space").css("display", "block");
+    $("#jungle").css("display", "none");
+    $("#dragons").css("display", "none");
+  });
+
+
+
 
 </script>
 </body>
