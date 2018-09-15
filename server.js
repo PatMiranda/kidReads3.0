@@ -15,7 +15,7 @@ var express = require("express");
 
 var app = express();
 
-var PORT = process.env.PORT || 3000;
+var PORT = process.env.PORT || 7200;
 
 var bodyParser = require('body-parser');
 
@@ -23,6 +23,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(bodyParser.json());
 app.use(express.static(__dirname + '/public'));
+
+
 // =============================================================================
 // COOKIES!!!!!!
 // =============================================================================
@@ -32,7 +34,7 @@ var passport = require('passport');
 var session  = require('express-session');
 
 app.use(session({
-	secret: 'kidreads3.0',
+	secret: 'kidreads2.0',
 	resave: true,
 	saveUninitialized: true
  })); // session secret

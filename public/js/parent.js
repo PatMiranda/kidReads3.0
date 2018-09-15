@@ -38,32 +38,37 @@ $(document).ready(function() {
     var bDay = $("input#bday");
     var theme = $("#themes")
   
-    // When the form is submitted, we validate there's an email and password entered
+
     kidForm.on("submit", function(event) {
       event.preventDefault();
-      var userData = {
+      var childData = {
         name: kidName.val().trim(),
         favAnimal: favAnimal.val().trim(),
         profilePic: profilePic.val().trim(),
         bday: bDay.val(),
         theme: theme.val()
       };
-      // If we have an email and password we run the loginUser function and clear the form
+
+      $.post("/api/createparent", childData, function(data) {
+        console.log("successful post")
+      });
+
       form.reset();
-      console.log("this is the user data" + JSON.stringify(userData));
+      console.log("this is the user data" + JSON.stringify(childData));
     });
   
     // loginUser does a post to our "api/login" route and if successful, redirects us the the members page
-    function loginUser(email, password) {
-      $.post("/api/login", {
-        email: email,
-        password: password
-      }).then(function(data) {
-        window.location.replace(data);
-        // If there's an error, log the error
-      }).catch(function(err) {
-        console.log(err);
-      });
-    }
+
+    // function loginUser(email, password) {
+    //   $.post("/api/login", {
+    //     email: email,
+    //     password: password
+    //   }).then(function(data) {
+    //     window.location.replace(data);
+    //     // If there's an error, log the error
+    //   }).catch(function(err) {
+    //     console.log(err);
+    //   });
+    // }
   
   });

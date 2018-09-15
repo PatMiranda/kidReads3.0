@@ -1,14 +1,14 @@
-module.exports = function(sequelize, DataTypes) {
+module.exports = function(sequelize, Sequelize) {
     var Booksetup = sequelize.define("LibraryBooks_Setup", {
       
-      ISBN: { type: DataTypes.STRING, primaryKey: true },
-      PageNumber: DataTypes.STRING,
-      PageText: DataTypes.TEXT,
-      PageFont: DataTypes.STRING,
-      PageFontColor: DataTypes.STRING,
-      PageFontSize: DataTypes.STRING,
-      PageImageFilePath: DataTypes.STRING,
-      PageAudioFilePath: DataTypes.STRING
+      ISBN: { type: Sequelize.STRING, primaryKey: true },
+      PageNumber: Sequelize.STRING,
+      PageText: Sequelize.TEXT,
+      PageFont: Sequelize.STRING,
+      PageFontColor: Sequelize.STRING,
+      PageFontSize: Sequelize.STRING,
+      PageImageFilePath: Sequelize.STRING,
+      PageAudioFilePath: Sequelize.STRING
     },
     {
       tableName: 'LibraryBooks_Setup'

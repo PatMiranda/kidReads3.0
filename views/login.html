@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>KidReads 3.0</title>
+    <title>KidReads 2.0</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
@@ -15,31 +15,60 @@
     <!-- <link rel="stylesheet" href="/public/css/wickedcss.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="/public/css/style.css" /> -->
     <script src="javascript/main.js"></script>
+    <style>
+        body {
+            background-color: #34e2ce;
+        }
+        .container {
+            padding-top: 50px;
+        }
+        .form {
+            background-color: white;
+        }
+        .monster {
+            padding-top: 20px;
+        }
+    </style>
 </head>
 <body>
 
 <div class="container">
-    <div class="col-sm-6 col-sm-offset-3">
-        <h1><span class="fa fa-sign-in"></span> Login</h1>
 
-        <!-- LOGIN FORM -->
-        <form action="login" method="post">
-            <div class="form-group">
-                <label>E-Mail</label>
-                <input type="text" class="form-control" name="email">
+    <div class="row">
+
+        <div class="col-md-6">
+            <div class="form jumbotron">
+                <h1><span class="fa fa-sign-in"></span> Login</h1>
+
+                <hr>
+
+                <!-- LOGIN FORM -->
+                <form action="/login" method="post">
+                    <div class="form-group">
+                        <label>E-Mail</label>
+                        <input type="text" class="form-control" name="email">
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" class="form-control" name="password">
+                    </div>
+
+                    <button type="submit" class="btn btn-warning btn-lg">Login</button>
+                </form>
+
+                <hr>
+
+                <p>Need an account? <a href="/signup">Signup</a></p>
             </div>
-            <div class="form-group">
-                <label>Password</label>
-                <input type="password" class="form-control" name="password">
+        </div>
+        <div class="col-md-6 text-center">
+            <div class="monster">
+                <img src="../assets/images/monster.png" alt="a reading monster" height="80%" width="80%">
             </div>
+        </div>
 
-            <button type="submit" class="btn btn-warning btn-lg">Login</button>
-        </form>
-
-        <hr>
-
-        <p>Need an account? <a href="/signup">Signup</a></p>
     </div>
+
 </div>
 
 </body>
