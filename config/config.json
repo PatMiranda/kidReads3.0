@@ -1,21 +1,27 @@
 {
-  "development": {
-    "username": "root",
-    "password": "Ledger88",
-    "database": "KidReads_DB",
-    "host": "localhost",
-    "dialect": "mysql"
-  },
-  "test": {
-    "username": "root",
-    "password": "Ledger88",
-    "database": "testdb",
-    "host": "localhost",
-    "dialect": "mysql",
-    "logging": false
-  },
-  "production": {
-    "use_env_variable": "JAWSDB_URL",
-    "dialect": "mysql"
+    "development": {
+      "username": "root",
+      "password": "redwings19",
+      "database": "KidReads_DB",
+      "host": "127.0.0.1",
+      "port": 3306,
+      "dialect": "mysql"
+    },
+    "test": {
+      "username": "root",
+      "password": "root",
+      "database": "KidReads_DB",
+      "host": "127.0.0.1",
+      "port": 3306,
+      "dialect": "mysql"
+    },
+    "production": {
+      "username": "root",
+      "password": null,
+      "database": "KidReads_DB",
+      "host": "127.0.0.1",
+      "port": 3306,
+      "dialect": "mysql"
+    }
   }
-}
+  

@@ -25,32 +25,50 @@
         .form {
             background-color: white;
         }
+        .monster {
+            padding-top: 20px;
+        }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <div class="form jumbotron">
-        <h1><span class="fa fa-sign-in"></span> Login</h1>
 
-        <!-- LOGIN FORM -->
-        <form action="/login" method="post">
-            <div class="form-group">
-                <label>E-Mail</label>
-                <input type="text" class="form-control" name="email">
+    <div class="row">
+
+        <div class="col-md-6">
+            <div class="form jumbotron">
+                <h1><span class="fa fa-sign-in"></span> Login</h1>
+
+                <hr>
+
+                <!-- LOGIN FORM -->
+                <form action="/login" method="post">
+                    <div class="form-group">
+                        <label>E-Mail</label>
+                        <input type="text" class="form-control" name="email">
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" class="form-control" name="password">
+                    </div>
+
+                    <button type="submit" class="btn btn-warning btn-lg">Login</button>
+                </form>
+
+                <hr>
+
+                <p>Need an account? <a href="/signup">Signup</a></p>
             </div>
-            <div class="form-group">
-                <label>Password</label>
-                <input type="password" class="form-control" name="password">
+        </div>
+        <div class="col-md-6 text-center">
+            <div class="monster">
+                <img src="../assets/images/monster.png" alt="a reading monster" height="80%" width="80%">
             </div>
+        </div>
 
-            <button type="submit" class="btn btn-warning btn-lg">Login</button>
-        </form>
-
-        <hr>
-
-        <p>Need an account? <a href="/signup">Signup</a></p>
     </div>
+
 </div>
 
 </body>
