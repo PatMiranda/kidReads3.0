@@ -1,9 +1,10 @@
+
+//***************************************************************/
 $("#buyMoon").on("click", function(){
+//***************************************************************/
     $("#buyMoon").css("display", "none");
     $("#boughtMoon").css("display", "block");
     var ISBN = this.value;
-    console.log(ISBN)
-    console.log(sessionStorage.kr_email)
 
     $.get("/api/getparentid/" + sessionStorage.kr_email, function(data) {
         var parentID = data.id;
@@ -13,7 +14,10 @@ $("#buyMoon").on("click", function(){
         })
     });
 });
+
+//***************************************************************/
 $("#buyMouse").on("click", function(){
+//***************************************************************/
     $("#buyMouse").css("display", "none");
     $("#boughtMouse").css("display", "block");
     var ISBN = this.value;
@@ -26,7 +30,10 @@ $("#buyMouse").on("click", function(){
         })
     });
 });
+
+//***************************************************************/
 $("#buyPigeon").on("click", function(){
+//***************************************************************/
     $("#buyPigeon").css("display", "none");
     $("#boughtPigeon").css("display", "block");
     var ISBN = this.value;
@@ -39,7 +46,10 @@ $("#buyPigeon").on("click", function(){
         })
     });
 });
+
+//***************************************************************/
 $("#buyGas").on("click", function(){
+//***************************************************************/
     $("#buyGas").css("display", "none");
     $("#boughtGas").css("display", "block");
     var ISBN = this.value;
@@ -52,7 +62,10 @@ $("#buyGas").on("click", function(){
         })
     });
 });
+
+//***************************************************************/
 $("#buyPooh").on("click", function(){
+//***************************************************************/
     $("#buyPooh").css("display", "none");
     $("#boughtPooh").css("display", "block");
     var ISBN = this.value;
@@ -65,7 +78,10 @@ $("#buyPooh").on("click", function(){
         })
     });
 });
+
+//***************************************************************/
 $("#buyBears").on("click", function(){
+//***************************************************************/
     $("#buyBears").css("display", "none");
     $("#boughtBears").css("display", "block");
     var ISBN = this.value;
@@ -79,31 +95,31 @@ $("#buyBears").on("click", function(){
     });
 });
 
+//***************************************************************/
 $("#submitButton").on("click", function(event) {
+//***************************************************************/
     event.preventDefault();
 
-    var kidForm = $("form#form");
     var kidName = $("input#childName");
     var favAnimal = $("input#favAnimal");
     var profilePic = $("input#profilePic");
     var bDay = $("input#bday");
-    var theme = $("#themes")
+    var theme = $("#themes option:selected").text()
 
     var childData = {
-    name: kidName.val().trim(),
-    favAnimal: favAnimal.val().trim(),
-    profilePic: profilePic.val().trim(),
-    bday: bDay.val(),
-    theme: theme.val()
+        name: kidName.val().trim(),
+        favAnimal: favAnimal.val().trim(),
+        profilePic: profilePic.val().trim(),
+        bday: bDay.val(),
+        theme: theme.trim()
     };
 
     $.post("/api/createchild/" + sessionStorage.parentId, childData, function(data) {
-        console.log("successful post")
-        $.post("/api/assignbooks/" + sessionStorage.parentId, childData, function(data) {
-        });
+        //sessionStorage.childId = data.ChildId;
+        // $.post("/api/assignbooks/" + sessionStorage.parentId, childData, function(data) {
+        // });
     });
 
     form.reset();
-    console.log("this is the user data" + JSON.stringify(childData));
 });  
  
