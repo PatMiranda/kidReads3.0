@@ -31,6 +31,21 @@ module.exports = function(sequelize, Sequelize) {
             type: Sequelize.STRING,
             allowNull: false
         },
+        AddressStreet1: {
+            type: Sequelize.STRING,
+        },
+        AddressStreet2: {
+            type: Sequelize.STRING,
+        },
+        AddressCity: {
+            type: Sequelize.STRING,
+        },
+        AddressState: {
+            type: Sequelize.STRING,
+        },
+        AddressZip: {
+            type: Sequelize.STRING,
+        },
         last_login: {
             type: Sequelize.DATE
         },
