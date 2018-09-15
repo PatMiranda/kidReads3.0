@@ -34,27 +34,28 @@ CREATE TABLE LibraryBooks_Setup (
     ON DELETE RESTRICT
 );
 
-CREATE TABLE ParentUser (
-    ParentId INT NOT NULL AUTO_INCREMENT,
-    ChildId INT NOT NULL,
-    EmailAddress VARCHAR(50) NULL,
-    UserName VARCHAR(20) NULL,
-    Password VARCHAR(20) NULL,
-    FirstName VARCHAR(25) NULL,
-    LastName VARCHAR(25) NULL,
+CREATE TABLE Users (
+    id INT NOT NULL AUTO_INCREMENT,
+    email VARCHAR(50) NULL,
+    username VARCHAR(20) NULL,
+    password VARCHAR(20) NULL,
+    about TEXT NULL,
+    firstname VARCHAR(25) NULL,
+    lastname VARCHAR(25) NULL,
     AddressStreet1 VARCHAR(50) NULL,
     AddressStreet2 VARCHAR(50) NULL,
     AddressCity VARCHAR(25) NULL,
     AddressState VARCHAR(2) NULL,
     AddressZip VARCHAR(10) NULL,
-    LastSignOn DATETIME NULL,
+    status ENUM('active', 'inactive') DEFAULT 'active',
+    last_login DATETIME NULL,
     createdAt TIMESTAMP DEFAULT NOW() ON UPDATE NOW() NULL,
     updatedAt TIMESTAMP DEFAULT NOW() ON UPDATE NOW() NULL,
 
-    PRIMARY KEY(ParentId)
+    PRIMARY KEY(id)
 );
 
-CREATE TABLE ChildUser(
+CREATE TABLE ChildUsers (
     ChildId INT NOT NULL AUTO_INCREMENT,
     ParentId INT NOT NULL,
     FirstName VARCHAR(25) NULL,
@@ -69,11 +70,21 @@ CREATE TABLE ChildUser(
     PRIMARY KEY (ChildId)
 );
 
-ALTER TABLE ChildUser
+ALTER TABLE ChildUsers
     ADD FOREIGN KEY fk_parentId(ParentId)
-    REFERENCES ParentUser(ParentId)
+    REFERENCES Users(id)
     ON UPDATE CASCADE
     ON DELETE RESTRICT;
+
+DELIMITER #
+CREATE TRIGGER populateChildBooks AFTER INSERT ON ChildUsers
+FOR EACH ROW
+BEGIN
+  INSERT INTO ChildBooks (ISBN, ChildId)
+  SELECT P.ISBN, C.ChildId
+  FROM ChildUsers C JOIN
+	   ParentBooks P ON P.ParentId = C.ParentId;
+END#
 
 CREATE TABLE ParentBooks (
     Id INT NOT NULL AUTO_INCREMENT,
@@ -89,7 +100,7 @@ CREATE TABLE ParentBooks (
     ON UPDATE CASCADE
     ON DELETE RESTRICT,
     FOREIGN KEY fk_parentId(ParentId)
-    REFERENCES ParentUser(ParentId)
+    REFERENCES Users(id)
     ON UPDATE CASCADE
     ON DELETE RESTRICT
 );
@@ -108,7 +119,7 @@ CREATE TABLE ChildBooks (
     ON UPDATE CASCADE
     ON DELETE RESTRICT,
     FOREIGN KEY fk_childId(ChildId)
-    REFERENCES ChildUser(ChildId)
+    REFERENCES ChildUsers(ChildId)
     ON UPDATE CASCADE
     ON DELETE RESTRICT
 );
