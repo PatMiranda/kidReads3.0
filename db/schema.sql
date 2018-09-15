@@ -83,7 +83,8 @@ BEGIN
   INSERT INTO ChildBooks (ISBN, ChildId)
   SELECT P.ISBN, C.ChildId
   FROM ChildUsers C JOIN
-	   ParentBooks P ON P.ParentId = C.ParentId;
+	   ParentBooks P ON P.ParentId = C.ParentId
+  WHERE C.ChildId = NEW.ChildId;
 END#
 
 CREATE TABLE ParentBooks (
