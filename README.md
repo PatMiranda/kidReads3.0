@@ -8,7 +8,7 @@ by
 
 Patrick Miranda, Dennis Platts, David Martin, Paul Swiergosz
 
-Heroku Link: https://whispering-chamber-36636.herokuapp.com/
+Heroku Link: https://lit-wave-53497.herokuapp.com/
 
 
 Kid Reads 2.0 is an interactive E-Reader desgined specifically for children! 
