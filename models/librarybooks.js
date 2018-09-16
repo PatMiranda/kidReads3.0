@@ -1,7 +1,8 @@
 module.exports = function(sequelize, Sequelize) {
     var Librarybooks = sequelize.define("LibraryBooks", {
       
-      ISBN: { type: Sequelize.STRING, primaryKey: true },
+      BookId: { type: Sequelize.INTEGER, primaryKey: true },
+      ISBN: Sequelize.STRING,
       Title: Sequelize.STRING,
       Author: Sequelize.STRING,
       Description: Sequelize.TEXT,

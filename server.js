@@ -58,7 +58,7 @@ require('./routes/apiRoutes.js')(app);
 
 require('./routes/htmlRoutes.js')(app, passport);
 
-require('./config/passport.js')(passport, db.user);
+require('./config/passport.js')(passport, db.ParentUsers);
 
 // =============================================================================
 // LISTENER

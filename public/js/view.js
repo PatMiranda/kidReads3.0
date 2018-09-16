@@ -6,8 +6,6 @@ $("#read-button").on("click", function(){
     // Our initial books array
     var booksetup = [],
         ISBN = this.value;
-
-      console.log(ISBN)
   
     // Getting book setup from database when page loads
     getBookSetup();

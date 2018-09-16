@@ -7,7 +7,7 @@ $("#buyMoon").on("click", function(){
     var ISBN = this.value;
 
     $.get("/api/getparentid/" + sessionStorage.kr_email, function(data) {
-        var parentID = data.id;
+        var parentID = data.ParentId;
 
         sessionStorage.parentId = parentID;
         $.post("/api/purchasebook/" + parentID + "/" + ISBN, function(data) {
@@ -23,7 +23,7 @@ $("#buyMouse").on("click", function(){
     var ISBN = this.value;
 
     $.get("/api/getparentid/" + sessionStorage.kr_email, function(data) {
-        var parentID = data.id;
+        var parentID = data.ParentId;
 
         sessionStorage.parentId = parentID;
         $.post("/api/purchasebook/" + parentID + "/" + ISBN, function(data) {
@@ -39,7 +39,7 @@ $("#buyPigeon").on("click", function(){
     var ISBN = this.value;
 
     $.get("/api/getparentid/" + sessionStorage.kr_email, function(data) {
-        var parentID = data.id;
+        var parentID = data.ParentId;
 
         sessionStorage.parentId = parentID;
         $.post("/api/purchasebook/" + parentID + "/" + ISBN, function(data) {
@@ -55,7 +55,7 @@ $("#buyGas").on("click", function(){
     var ISBN = this.value;
 
     $.get("/api/getparentid/" + sessionStorage.kr_email, function(data) {
-        var parentID = data.id;
+        var parentID = data.ParentId;
 
         sessionStorage.parentId = parentID;
         $.post("/api/purchasebook/" + parentID + "/" + ISBN, function(data) {
@@ -71,7 +71,7 @@ $("#buyPooh").on("click", function(){
     var ISBN = this.value;
 
     $.get("/api/getparentid/" + sessionStorage.kr_email, function(data) {
-        var parentID = data.id;
+        var parentID = data.ParentId;
 
         sessionStorage.parentId = parentID;
         $.post("/api/purchasebook/" + parentID + "/" + ISBN, function(data) {
@@ -87,7 +87,7 @@ $("#buyBears").on("click", function(){
     var ISBN = this.value;
 
     $.get("/api/getparentid/" + sessionStorage.kr_email, function(data) {
-        var parentID = data.id;
+        var parentID = data.ParentId;
 
         sessionStorage.parentId = parentID;
         $.post("/api/purchasebook/" + parentID + "/" + ISBN, function(data) {

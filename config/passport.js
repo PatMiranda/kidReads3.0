@@ -15,7 +15,7 @@ module.exports = function(passport, user) {
 
     //serialize
     passport.serializeUser(function(user, done) {
-        done(null, user.id);
+        done(null, user.ParentId);
     });
 
     // deserialize user 
@@ -68,7 +68,6 @@ module.exports = function(passport, user) {
                             };
 
                             User.create(data).then(function(newUser, created) {
-                                
                                 if (!newUser) {
                                     return done(null, false, console.log("error, error, error"));
                                 }
