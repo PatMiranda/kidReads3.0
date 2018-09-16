@@ -18,13 +18,9 @@
 </head>
 <body background="">
 
-
-
 <main>
 
     <div class="container">
-
-
 
         <!--Header-->
         <div class="row">
@@ -56,7 +52,7 @@
 <!--************************************************************************************************************************-->
 
         <!--Images for the O.G. landing page-->
-        <div class="container" id="landing" style="display: block">
+        <div class="container" id="landing" style="display: none">
             <div class="row">
                 <div class="col-7">
                     <img src="/assets/images/landing/cloud2.png" id="cloud" class="">
@@ -219,37 +215,36 @@
         $("#dragons").css("display", "none");
     });
 
-    // //***************************************************************/
-    // $(document).ready(function() {
-    // //***************************************************************/
+    //***************************************************************/
+    $(document).ready(function() {
+    //***************************************************************/
 
-    //     $.get("/api/getchildid/" + sessionStorage.parentId, function(data) {
-    //         var theme = data.SiteTheme;
+        $.get("/api/getchildid/" + sessionStorage.parentId, function(data) {
+            var theme = data.SiteTheme;
 
-    //         if (theme === "Forest") {
-    //             $("#landing").css("display", "block");
-    //             $("#fantasy").css("display", "none");
-    //             $("#space").css("display", "none");
-    //             $("#jungle").css("display", "none");
-    //             $("#dragons").css("display", "none");
-    //         }
-    //         if (theme === "Space") {
-    //             $("#landing").css("display", "none");
-    //             $("#fantasy").css("display", "none");
-    //             $("#space").css("display", "block");
-    //             $("#jungle").css("display", "none");
-    //             $("#dragons").css("display", "none");
-    //         }
-    //         if (theme === "Fantasy") {
-    //             $("#landing").css("display", "none");
-    //             $("#fantasy").css("display", "block");
-    //             $("#space").css("display", "none");
-    //             $("#jungle").css("display", "none");
-    //             $("#dragons").css("display", "none");
-    //         }
-    //     });
-    // });
-
+            if (theme === "Forest") {
+                $("#landing").css("display", "block");
+                $("#fantasy").css("display", "none");
+                $("#space").css("display", "none");
+                $("#jungle").css("display", "none");
+                $("#dragons").css("display", "none");
+            }
+            if (theme === "Space") {
+                $("#landing").css("display", "none");
+                $("#fantasy").css("display", "none");
+                $("#space").css("display", "block");
+                $("#jungle").css("display", "none");
+                $("#dragons").css("display", "none");
+            }
+            if (theme === "Fantasy") {
+                $("#landing").css("display", "none");
+                $("#fantasy").css("display", "block");
+                $("#space").css("display", "none");
+                $("#jungle").css("display", "none");
+                $("#dragons").css("display", "none");
+            }
+        });
+    });
 </script>
 </body>
 </html>

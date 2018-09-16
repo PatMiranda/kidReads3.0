@@ -1,17 +1,16 @@
 module.exports = function(sequelize, Sequelize) {
+    var User = sequelize.define('ParentUsers', {
  
-    var User = sequelize.define('user', {
- 
-        id: {
+        ParentId: {
             autoIncrement: true,
             primaryKey: true,
             type: Sequelize.INTEGER
         },
-        firstname: {
+        lastname: {
             type: Sequelize.STRING,
             notEmpty: true
         },
-        lastname: {
+        firstname: {
             type: Sequelize.STRING,
             notEmpty: true
         },
@@ -52,8 +51,11 @@ module.exports = function(sequelize, Sequelize) {
         status: {
             type: Sequelize.ENUM('active', 'inactive'),
             defaultValue: 'active'
-        }
+        },
+    },
+    {
+            tableName: 'ParentUsers'
     });
     
     return User;
-}
+};

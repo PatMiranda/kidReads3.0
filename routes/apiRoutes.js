@@ -49,7 +49,7 @@ module.exports = function(app) {
 
   app.get("/api/getparentid/:email", function(req, res) {
 
-    db.user.findOne({ where: { email : req.params.email }}).then(function(results) {
+    db.ParentUsers.findOne({ where: { email : req.params.email }}).then(function(results) {
       res.json(results);
     });
   });

@@ -1,7 +1,7 @@
 module.exports = function(sequelize, Sequelize) {
     var ChildBook = sequelize.define("ChildBooks", {
       
-      Id: { type: Sequelize.INTEGER, autoIncrement: true, primaryKey: true },
+      BookId: { type: Sequelize.INTEGER, autoIncrement: true, primaryKey: true },
       ChildId: Sequelize.INTEGER,
       ISBN: Sequelize.STRING
     },
