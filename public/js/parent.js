@@ -108,9 +108,9 @@ $("#submitButton").on("click", function(event) {
 
     var childData = {
         name: kidName.val().trim(),
+        bday: bDay.val(),
         favAnimal: favAnimal.val().trim(),
         profilePic: profilePic.val().trim(),
-        bday: bDay.val(),
         theme: theme.trim()
     };
 

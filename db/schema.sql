@@ -64,6 +64,7 @@ CREATE TABLE ChildUsers (
     LastName VARCHAR(25) NULL,
     Birthday DATE NULL,
     FavoriteAnimal VARCHAR(35) NULL,
+    ProfilePhotoURL VARCHAR(100) NULL,
     SiteTheme VARCHAR(25) NULL,
     LastSignOn DATETIME NULL,
     createdAt TIMESTAMP DEFAULT NOW(),
