@@ -6,7 +6,7 @@ $("#buyMoon").on("click", function(){
     $("#boughtMoon").css("display", "block");
     var ISBN = this.value;
 
-    $.get("/api/getparentid/" + sessionStorage.kr_email, function(data) {
+    $.get("/api/getparent/" + sessionStorage.kr_email, function(data) {
         var parentID = data.ParentId;
 
         sessionStorage.parentId = parentID;
@@ -22,7 +22,7 @@ $("#buyMouse").on("click", function(){
     $("#boughtMouse").css("display", "block");
     var ISBN = this.value;
 
-    $.get("/api/getparentid/" + sessionStorage.kr_email, function(data) {
+    $.get("/api/getparent/" + sessionStorage.kr_email, function(data) {
         var parentID = data.ParentId;
 
         sessionStorage.parentId = parentID;
@@ -38,7 +38,7 @@ $("#buyPigeon").on("click", function(){
     $("#boughtPigeon").css("display", "block");
     var ISBN = this.value;
 
-    $.get("/api/getparentid/" + sessionStorage.kr_email, function(data) {
+    $.get("/api/getparent/" + sessionStorage.kr_email, function(data) {
         var parentID = data.ParentId;
 
         sessionStorage.parentId = parentID;
@@ -54,7 +54,7 @@ $("#buyGas").on("click", function(){
     $("#boughtGas").css("display", "block");
     var ISBN = this.value;
 
-    $.get("/api/getparentid/" + sessionStorage.kr_email, function(data) {
+    $.get("/api/getparent/" + sessionStorage.kr_email, function(data) {
         var parentID = data.ParentId;
 
         sessionStorage.parentId = parentID;
@@ -70,7 +70,7 @@ $("#buyPooh").on("click", function(){
     $("#boughtPooh").css("display", "block");
     var ISBN = this.value;
 
-    $.get("/api/getparentid/" + sessionStorage.kr_email, function(data) {
+    $.get("/api/getparent/" + sessionStorage.kr_email, function(data) {
         var parentID = data.ParentId;
 
         sessionStorage.parentId = parentID;
@@ -86,7 +86,7 @@ $("#buyBears").on("click", function(){
     $("#boughtBears").css("display", "block");
     var ISBN = this.value;
 
-    $.get("/api/getparentid/" + sessionStorage.kr_email, function(data) {
+    $.get("/api/getparent/" + sessionStorage.kr_email, function(data) {
         var parentID = data.ParentId;
 
         sessionStorage.parentId = parentID;

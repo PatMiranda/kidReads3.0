@@ -6,27 +6,30 @@ module.exports = function(sequelize, Sequelize) {
             primaryKey: true,
             type: Sequelize.INTEGER
         },
-        lastname: {
+        FirstName: {
             type: Sequelize.STRING,
-            notEmpty: true
+            notEmpty: true,
+            allowNull: false
         },
-        firstname: {
+        LastName: {
             type: Sequelize.STRING,
-            notEmpty: true
+            notEmpty: true,
+            allowNull: false
         },
-        username: {
+        Username: {
             type: Sequelize.TEXT
         },
-        about: {
+        About: {
             type: Sequelize.TEXT
         },
-        email: {
+        Email: {
             type: Sequelize.STRING,
+            allowNull: false,
             validate: {
                 isEmail: true
             }
         },
-        password: {
+        Password: {
             type: Sequelize.STRING,
             allowNull: false
         },
@@ -48,7 +51,7 @@ module.exports = function(sequelize, Sequelize) {
         last_login: {
             type: Sequelize.DATE
         },
-        status: {
+        Status: {
             type: Sequelize.ENUM('active', 'inactive'),
             defaultValue: 'active'
         },

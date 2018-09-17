@@ -4,6 +4,7 @@
 
 var env = require('dotenv').load();
 require("dotenv").config();
+
 // Models
 var db = require("./models");
 
@@ -43,12 +44,14 @@ app.use(passport.initialize());
 
 app.use(passport.session()); // persistent login sessions
 
+
 // =============================================================================
 // VIEW ENGINE
 // =============================================================================
 
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
+
 
 // =============================================================================
 // ROUTES & PASSPORT SET UP
@@ -59,6 +62,7 @@ require('./routes/apiRoutes.js')(app);
 require('./routes/htmlRoutes.js')(app, passport);
 
 require('./config/passport.js')(passport, db.ParentUsers);
+
 
 // =============================================================================
 // LISTENER

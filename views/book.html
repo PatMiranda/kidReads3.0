@@ -76,56 +76,58 @@
         </div> 
     </div>
     
-    <audio id="titlePage" src="audio/TITLE.mp3" preload="auto">
-    </audio>
-    <audio id="music" src="audio/music.mp3" preload="auto" loop="loop">
-    </audio>
-    <audio id="pga2" src="audio/pg2.mp3" preload="auto">
-    </audio>
-    <audio id="pga4" src="audio/pg4.mp3" preload="auto">
-    </audio>
-    <audio id="pga6" src="audio/pg6.mp3" preload="auto">
-    </audio>
-    <audio id="pga8" src="audio/pg8.mp3" preload="auto">
-    </audio>
-    <audio id="pga10" src="audio/pg10.mp3" preload="auto">
-    </audio>
-    <audio id="pga12" src="audio/pg12.mp3" preload="auto">
-    </audio>
-    <audio id="pga14" src="audio/pg14.mp3" preload="auto">
-    </audio>
-    <audio id="pga16" src="audio/pg16.mp3" preload="auto">
-    </audio>
-    <audio id="pga18" src="audio/pg18.mp3" preload="auto">
-    </audio>
-    <audio id="pga20" src="audio/pg20.mp3" preload="auto">
-    </audio>
-    <audio id="pga22" src="audio/pg22.mp3" preload="auto">
-    </audio>
-    <audio id="pga24" src="audio/pg24.mp3" preload="auto">
-    </audio>
-    <audio id="pga26" src="audio/pg26.mp3" preload="auto">
-    </audio>
-    <audio id="pga28" src="audio/pg28.mp3" preload="auto">
-    </audio>
-    <audio id="pga30" src="audio/pg30.mp3" preload="auto">
-    </audio>
-    <audio id="pga32" src="audio/pg32.mp3" preload="auto">
-    </audio>
-    <audio id="pga34" src="audio/pg34.mp3" preload="auto">
-    </audio>
-    <audio id="pga36" src="audio/pg36.mp3" preload="auto">
-    </audio>
-    <audio id="pga38" src="audio/pg38.mp3" preload="auto">
-    </audio>
-    <audio id="pga40" src="audio/pg40.mp3" preload="auto">
-    </audio>
-    <audio id="pga42" src="audio/pg42.mp3" preload="auto">
-    </audio>
-    <audio id="pga44" src="audio/pg44.mp3" preload="auto">
-    </audio>
-    <audio id="pga46" src="audio/pg46.mp3" preload="auto">
-    </audio>
+    <div id="audiofiles">
+        <audio id="titlePage" src="audio/TITLE.mp3" preload="auto">
+        </audio>
+        <audio id="music" src="audio/music.mp3" preload="auto" loop="loop">
+        </audio>
+        <audio id="pga2" src="audio/pg2.mp3" preload="auto">
+        </audio>
+        <audio id="pga4" src="audio/pg4.mp3" preload="auto">
+        </audio>
+        <audio id="pga6" src="audio/pg6.mp3" preload="auto">
+        </audio>
+        <audio id="pga8" src="audio/pg8.mp3" preload="auto">
+        </audio>
+        <audio id="pga10" src="audio/pg10.mp3" preload="auto">
+        </audio>
+        <audio id="pga12" src="audio/pg12.mp3" preload="auto">
+        </audio>
+        <audio id="pga14" src="audio/pg14.mp3" preload="auto">
+        </audio>
+        <audio id="pga16" src="audio/pg16.mp3" preload="auto">
+        </audio>
+        <audio id="pga18" src="audio/pg18.mp3" preload="auto">
+        </audio>
+        <audio id="pga20" src="audio/pg20.mp3" preload="auto">
+        </audio>
+        <audio id="pga22" src="audio/pg22.mp3" preload="auto">
+        </audio>
+        <audio id="pga24" src="audio/pg24.mp3" preload="auto">
+        </audio>
+        <audio id="pga26" src="audio/pg26.mp3" preload="auto">
+        </audio>
+        <audio id="pga28" src="audio/pg28.mp3" preload="auto">
+        </audio>
+        <audio id="pga30" src="audio/pg30.mp3" preload="auto">
+        </audio>
+        <audio id="pga32" src="audio/pg32.mp3" preload="auto">
+        </audio>
+        <audio id="pga34" src="audio/pg34.mp3" preload="auto">
+        </audio>
+        <audio id="pga36" src="audio/pg36.mp3" preload="auto">
+        </audio>
+        <audio id="pga38" src="audio/pg38.mp3" preload="auto">
+        </audio>
+        <audio id="pga40" src="audio/pg40.mp3" preload="auto">
+        </audio>
+        <audio id="pga42" src="audio/pg42.mp3" preload="auto">
+        </audio>
+        <audio id="pga44" src="audio/pg44.mp3" preload="auto">
+        </audio>
+        <audio id="pga46" src="audio/pg46.mp3" preload="auto">
+        </audio>
+    </div>
 
 </main>
 
@@ -160,8 +162,8 @@
     $(document).ready(function() {
     //***************************************************************/
 
-        $.get("/api/getchildid/" + sessionStorage.parentId, function(data) {
-            console.log(data)
+        $.get("/api/getchild/" + sessionStorage.parentId, function(data) {
+
             var childID = data.ChildId,
                 tagText = "";
 

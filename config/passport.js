@@ -31,6 +31,7 @@ module.exports = function(passport, user) {
 
     // ==============================================================================
     // SIGN-UP
+    // ==============================================================================
     passport.use('local-signup',
     
         new LocalStrategy (
@@ -40,6 +41,7 @@ module.exports = function(passport, user) {
                 passReqToCallback : true
             }, 
             function(req, email, password, done) {
+
                 var generateHash = function(password) {
                     return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
                 };
@@ -47,7 +49,7 @@ module.exports = function(passport, user) {
                 // creates new User
                 User.findOne({
                     where: { 
-                        email: email 
+                        Email: email 
                     }
                 }).then(function(user) {
                     if (user) {
@@ -57,14 +59,10 @@ module.exports = function(passport, user) {
                             var userPassword = generateHash(password);
 
                             var data = {
-                                    email: email,
-                                    password: userPassword,
-                                    firstname: req.body.firstname,
-                                    lastname: req.body.lastname,
-                                    AddressStreet1 : req.body.AddressStreet1,
-                                    AddressCity: req.body.AddressCity,
-                                    AddressState: req.body.AddressState,
-                                    AddressZip: req.body.AddressZip
+                                    Email: email,
+                                    Password: userPassword,
+                                    FirstName: req.body.firstname,
+                                    LastName: req.body.lastname,
                             };
 
                             User.create(data).then(function(newUser, created) {
@@ -82,6 +80,7 @@ module.exports = function(passport, user) {
 
     // =============================================================================
     // LOGIN
+    // ==============================================================================
     passport.use('local-signin', 
     
         new LocalStrategy ({
@@ -91,21 +90,21 @@ module.exports = function(passport, user) {
             passReqToCallback: true // allows us to pass back the entire request to the callback
         },
         function(req, email, password, done) {
+
             var User = user;
             var isValidPassword = function(userpass, password) {
-                console.log(bcrypt.compareSync(password, userpass))
                 return bcrypt.compareSync(password, userpass);
             }
             
             User.findOne({
                 where: {
-                    email: email
+                    Email: email
                 }
             }).then(function(user) {
                 if (!user) {
                     return done(null, false, console.log("Email does not exist"));
                 }
-                if (!isValidPassword(user.password, password)) {
+                if (!isValidPassword(user.Password, password)) {
                     return done(null, false, console.log("Incorrect Password."));
                 }
                 var userinfo = user.get();

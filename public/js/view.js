@@ -4,7 +4,7 @@ $("#read-button").on("click", function(){
 //***************************************************************/
 
     // Our initial books array
-    var booksetup = [],
+    var bookPages = [],
         ISBN = this.value;
   
     // Getting book setup from database when page loads
@@ -13,15 +13,15 @@ $("#read-button").on("click", function(){
     // This function grabs booksetups from the database and updates the view
     function getBookSetup() {
         $.get("/api/booksetup/" + ISBN, function(data) {
-          booksetup = data;
+          bookPages = data;
           initializeBook();
         });
     }
 
     function initializeBook() {
-      var pages = booksetup,
-          fontColor,
+      var fontColor,
           fontSize,
+          imgPath,
           pgCounter = 1,
           tagText = '',
           tagStyle,
@@ -29,9 +29,10 @@ $("#read-button").on("click", function(){
           page,
           arrWords = [];
 
-      pages.forEach(function (item, id) {
+      bookPages.forEach(function (item, id) {
           if (id > 0) {
-            tagStyle = '<div style="background-image: url(' + "'images/pg" + pgCounter.toString() + ".JPG')" + '" />';
+            imgPath = (item.PageImageFilePath).replace('/', '\/');
+            tagStyle = '<div style="background-image: url(' + imgPath + ')" />';
             element = $(tagStyle);
             $("#readBook").turn("addPage", element, pgCounter + 3)
 
@@ -50,6 +51,17 @@ $("#read-button").on("click", function(){
             });
 
             tagText += '</p>'
+
+            //**************************************************************/
+            //** Temp Holding Code to auto-populate book page audio files **/
+            //** Will ned to add "elem" var                               **/
+            //**************************************************************/
+            // elem = document.createElement("audio");
+            // elem.id = "pga" + (pgCounter + 1).toString();
+            // elem.src = item.PageAudioFilePath;
+            // elem.preload = "auto";
+            // document.getElementById("audiofiles").appendChild(elem);
+
             pgCounter += 2;
           }
 

@@ -84,7 +84,7 @@
     $(document).ready(function() {
     //***************************************************************/
 
-        $.get("/api/getparentid/" + sessionStorage.kr_email, function(data) {
+        $.get("/api/getparent/" + sessionStorage.kr_email, function(data) {
             var parentID = data.ParentId;
 
             sessionStorage.parentId = parentID;

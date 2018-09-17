@@ -47,14 +47,14 @@ module.exports = function(app) {
       });
   });
 
-  app.get("/api/getparentid/:email", function(req, res) {
+  app.get("/api/getparent/:email", function(req, res) {
 
-    db.ParentUsers.findOne({ where: { email : req.params.email }}).then(function(results) {
+    db.ParentUsers.findOne({ where: { Email : req.params.email }}).then(function(results) {
       res.json(results);
     });
   });
 
-  app.get("/api/getchildid/:parentId", function(req, res) {
+  app.get("/api/getchild/:parentId", function(req, res) {
     db.ChildUsers.findOne({ where: { ParentId : req.params.parentId }}).then(function(results) {
       res.json(results);
     });
