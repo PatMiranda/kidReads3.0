@@ -12,8 +12,7 @@ What makes Kid Reads different from other E-Readers is that while it was designe
 
 
 ## **Created by:** #
-
-    | [Patrick Miranda](https://github.com/PatMiranda/) | [Dennis Platts](https://github.com/DennisDethman/) | [David Martin](https://github.com/NitramDivad/) | [Paul Swiergosz](https://github.com/swiergoszp/) |
+| [Patrick Miranda](https://github.com/PatMiranda/) | [Dennis Platts](https://github.com/DennisDethman/) | [David Martin](https://github.com/NitramDivad/) | [Paul Swiergosz](https://github.com/swiergoszp/) |
 
 ## **Links:** #
 
