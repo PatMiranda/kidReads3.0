@@ -30,6 +30,7 @@ module.exports = function(app) {
       FirstName: req.body.name,
       Birthday: req.body.bday,
       FavoriteAnimal: req.body.favAnimal,
+      ProfilePhotoURL: req.body.profilePic,
       SiteTheme: req.body.theme
     })
       .then(function(dbPost) {

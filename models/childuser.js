@@ -7,6 +7,7 @@ module.exports = function(sequelize, Sequelize) {
       LastName: Sequelize.STRING,
       Birthday: Sequelize.DATE,
       FavoriteAnimal: Sequelize.STRING,
+      ProfilePhotoURL: Sequelize.STRING,
       SiteTheme: Sequelize.STRING
     },
     {
