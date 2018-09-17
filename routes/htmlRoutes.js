@@ -18,8 +18,6 @@ module.exports = function(app, passport) {
       failureRedirect: "/login"
     }),
     function(req, res) {
-      console.log("hello");
-
       if (req.body.remember) {
         req.session.cookie.maxAge = 1000 * 60 * 60 * 3;
       } else {
@@ -72,7 +70,6 @@ module.exports = function(app, passport) {
     req.logout();
     req.session.destroy();
     res.redirect("/");
-    // res.send("logged out");
   });
 
   // 404

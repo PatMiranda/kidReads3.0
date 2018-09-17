@@ -219,7 +219,7 @@
     $(document).ready(function() {
     //***************************************************************/
 
-        $.get("/api/getchildid/" + sessionStorage.parentId, function(data) {
+        $.get("/api/getchild/" + sessionStorage.parentId, function(data) {
             var theme = data.SiteTheme;
 
             if (theme === "Forest") {
