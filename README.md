@@ -12,11 +12,11 @@ What makes Kid Reads different from other E-Readers is that while it was designe
 
 
 ## **Created by:** #
-Patrick Miranda, Dennis Platts, David Martin, Paul Swiergosz
+| [Patrick Miranda](https://github.com/PatMiranda/) | [Dennis Platts](https://github.com/DennisDethman/) | [David Martin](https://github.com/NitramDivad/) | [Paul Swiergosz](https://github.com/swiergoszp/) |
 
 ## **Links:** #
 
 | [Launch KidReads 2.0](https://lit-wave-53497.herokuapp.com/) | 
-[Powerpoint Presentation](https://drive.google.com/file/d/1aoRRfOBcJD9mqIYPRdPAHgloMAX6A7ku/view?usp=sharing) | 
+[PowerPoint Presentation](https://drive.google.com/file/d/1aoRRfOBcJD9mqIYPRdPAHgloMAX6A7ku/view?usp=sharing) | 
 [Keynote Presentation](https://drive.google.com/file/d/17O7zvfenYJqk_9NeNhcW1oVGNq4uuMAG/view?usp=sharing) |
 [Database Schema](https://drive.google.com/file/d/1BOxjr4ihkzHgOXT7SXdlymQD8wmRbw5N/view?usp=sharing) |
